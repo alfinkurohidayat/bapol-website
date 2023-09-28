@@ -1,0 +1,36 @@
+<table>
+    <tr>
+      <th>Nama</th>
+      <th>Nomor Hp</th>
+      <th>Aksi</th>
+    </tr>
+
+    <% kontaks.forEach((kon, i) => { i++ %>
+        <tr>
+            <td><%= i++ %> . <%= kon.nama %></td>
+            <td><%= kon.nohp %></td>
+            <td>
+              <button onclick="window.location.href='/kontak/<%= kon.nama %>'" class="btn">Details</button>
+            </td>
+          </tr>
+    <% }) %>
+  </table>
+
+   <!-- jika data belum diisi -->
+   <% if (kontaks.length === 0) { %>
+    <div class="card">
+        <div class="card-content">
+            <h1 class="h1k">data tidak ada</h1>
+        </div>
+      </div>
+<% } %>
+
+<div class="add">
+  <a href="/kontak/add">+</a>
+</div>
+
+
+<!-- untuk flash -->
+<% if (mesage.length !== 0) { %>
+  <div><%= mesage %></div>
+<% } %>

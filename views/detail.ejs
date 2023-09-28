@@ -1,0 +1,26 @@
+<% if (!kontaks) { %> 
+      <div class="card">
+        <div class="card-content">
+            <h1 class="h1k">data tidak ada</h1>
+            <a href="/kontak">Kembali</a>
+        </div>
+      </div>
+<% } else {%>
+    <div class="card">
+        <div class="card-content">
+          <h3><%= kontaks.nama %></h3>
+          <p><%= kontaks.nohp %></p>
+          <p><%= kontaks.email %></p>
+          <!-- untuk tombol delete -->
+          <!-- <a onclick="return confirm('yakin ?')" href="/kontak/delete/<%= kontaks.nama %>">hapus</a> -->
+          <form action="/kontak?_method=DELETE" method="post">
+            <input type="hidden" name="nama" value="<%= kontaks.nama %>">
+            <button onclick="return confirm('yakin ?')">hapus</button>
+          </form>
+          <!-- untuk tombol ubah -->
+          <a  href="/kontak/edit/<%= kontaks.nama %>">ubah</a>
+
+          <a href="/kontak">Kembali</a>
+        </div>
+      </div>
+  <% } %>

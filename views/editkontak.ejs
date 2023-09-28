@@ -1,0 +1,48 @@
+
+
+<h2>ubah data</h2>
+
+
+<!-- error yang dikirim dari app.js ketika ada yang duplikat -->
+<!-- mengeceknya harus menggunakan typeof -->
+
+<% if (typeof errors != 'undefined') { %>
+  <div class="cool-div">
+    <ul>
+      <% errors.forEach(err => { %>
+         <li><%= err.msg %></li>
+      <% }) %>
+    </ul>
+  </div>
+
+<% } %>
+
+<!-- atribute name pada tag input harus sama dengan property json -->
+<!-- actinya mengarah ke round baru yaitu /kontak/update -->
+<form method="post" action="/kontak?_method=PUT">
+  <!-- menambahkan id untuk mengubah data berdasarkan id-->
+  <input type="hidden" name="_id" value="<%= kontak._id %>">
+
+  <!-- memebuat input baru untuk mengirimkan nama sebagai input hidden,agar kita punya akses ke nama lamanya -->
+  <input type="hidden" name="oldname" value="<%= (kontak.oldname) ? kontak.oldnama : kontak.nama %>">
+  <div class="form-group">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" name="nama" required value="<%= kontak.nama %>">
+  </div>
+  <div class="form-group">
+    <label for="nohp">No.Hp:</label>
+    <input type="text" id="nohp" name="nohp" required value="<%= kontak.nohp %>">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required value="<%= kontak.email %>">
+  </div>
+  <div class="form-group">
+      <button type="button" onclick="window.location.href='/kontak'">Batal</button>
+    <button type="submit" onclick="window.location.href=''">ubah data kontak</button>
+  </div>
+</form>
+
+
+
+

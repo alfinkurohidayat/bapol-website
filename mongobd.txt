@@ -1,0 +1,28 @@
+website mongodb = (www.mongodb.com)
+-> mongodb adalah database berbasis dokumen yang memiliki skalabilitas dan fleksibilitas yang kita inginkan dan juga memiliki 
+   fitur query dan indexing yang kita butuhkan
+-> kumpulan data pada nosql disebut collection
+-> satu adta disebut document
+
+-> buka website mongodb lalu pilih comunity server
+-> lalu pilih on-premises lalu pilih versinya
+-> buka website mongodb lalu pilih server
+-> pilih instalasi
+-> install seperti biasa
+
+
+cara mengkoneksikannya
+-> buka documetasi , pilih server lalu pilih mongosell method
+-> show dbs (untuk melihat databases)
+-> use alfin (jika udah ada db alfin makan pakai db alfin jika belum ada maka buat db alfin)
+-> db.createCollection('mahasiswa') (membuat table/collection bernama mahasiswa)
+-> show collections (untuk melihat collection/ table)
+-> db.namacolllection.insertMany([untuk banyak data])/inserOne({untuk satu data}) = contoh == db.mahasiswa.insertOne ({nama : 'alfin', email : 'hidayatalfin60@gmail.com'})
+-> db.namacolllection.find() (untuk melihat isi dari collection mahasiswa)
+5F6pviscWrBwX6Mg
+
+
+
+mengunakan modul mongoose
+-> download express,ejs,express-ejs-layouts,instal nodemon
+-> folder utils untuk mengkoneksikan ke database

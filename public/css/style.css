@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+  }
+
+  .navbar {
+    display: flex;
+    background-color: #333;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .navbar h3 {
+    color: #d80505;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    transition: all .5s;
+    padding: 0px 60px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: all .5s;
+  }
+
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .layanan-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .layanan {
+    width: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .layanan:hover {
+    transform: translateY(-5px);
+  }
+
+  .layanan-icon {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .layanan-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .layanan-description {
+    font-size: 16px;
+    color: #666;
+  }
+
+  img{
+      margin-top: -350px;
+      margin-left: 600px;
+      border-radius: 50%;
+  }
+
+
+  .h1{
+    text-align: center;
+  }
+
+.tbl-h2{
+  font-size: 3em;
+  text-align: center;
+}
+
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th {
+    text-align: left;
+    padding: 8px;
+    font-size: 2em;
+  }
+
+  td {
+    text-align: left;
+    padding: 8px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .btn{
+    background-color: white;
+    padding: 5px 40px;
+    border: none;
+    color: black;
+  }
+
+
+  /* detail kontak */
+  .card {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 150px auto;
+  }
+  
+  .card-content {
+    padding: 16px;
+  }
+  
+  .card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .card-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  
+  .card-content a {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .card-content a:hover {
+    background-color: #45a049;
+  }
+
+.h1k{
+  color: black;
+}
+
+.add{
+  text-align: center;
+  margin-top: 70px;
+}
+
+.add a{
+  text-decoration: none;
+  color: black;
+  outline: 1px solid white;
+  font-size: 3em;
+  padding: 20px 30px;
+  font-weight: bolder;
+}
+
+
+/* add kontak */
+form{
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 30%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* div pesan error */
+.cool-div {
+  width: 300px;
+  height: 200px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin: auto;
+}
+
+.cool-div:hover {
+  background-color: #45a049;
+}
