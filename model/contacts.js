@@ -2,15 +2,15 @@ import mongoose from 'mongoose';
 
 //membuat schema dan di export ke app.js
 const Contact = mongoose.model('Contact', {
-    nama : {
+    tanggal : {
         type : String,
         required : true,
     },
-    nohp : {
+    materi : {
         type : String,
         required : true,
     },
-    email : {
+    status : {
         type : String,
     }
 })

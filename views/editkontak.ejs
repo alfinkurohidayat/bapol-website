@@ -24,18 +24,18 @@
   <input type="hidden" name="_id" value="<%= kontak._id %>">
 
   <!-- memebuat input baru untuk mengirimkan nama sebagai input hidden,agar kita punya akses ke nama lamanya -->
-  <input type="hidden" name="oldname" value="<%= (kontak.oldname) ? kontak.oldnama : kontak.nama %>">
+  <input type="hidden" name="oldname" value="<%= (kontak.oldname) ? kontak.oldnama : kontak.tanggal %>">
   <div class="form-group">
     <label for="nama">Nama:</label>
-    <input type="text" id="nama" name="nama" required value="<%= kontak.nama %>">
+    <input type="text" id="tanggal" name="tanggal" required value="<%= kontak.tanggal %>">
   </div>
   <div class="form-group">
     <label for="nohp">No.Hp:</label>
-    <input type="text" id="nohp" name="nohp" required value="<%= kontak.nohp %>">
+    <input type="text" id="materi" name="materi" required value="<%= kontak.materi %>">
   </div>
   <div class="form-group">
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required value="<%= kontak.email %>">
+    <input type="text" id="status" name="status" required value="<%= kontak.status %>">
   </div>
   <div class="form-group">
       <button type="button" onclick="window.location.href='/kontak'">Batal</button>

@@ -82,18 +82,18 @@ app.get('/kontak/add', (req,res) => {
 // proses data kontak
 app.post('/kontak', [
   
-  body('nama').custom(async(value) => {
-    const duplikat = await Contact.findOne({nama : value})
+  body('tanggal').custom(async(value) => {
+    const duplikat = await Contact.findOne({tanggal : value})
     if(duplikat) {
       
-      throw new Error('nama sudah digunakan')
+      throw new Error('tanggal sudah digunakan')
     } 
 
     return true;
   }),
 
- check('email', 'email tidak valid').isEmail(), 
- check('nohp', 'No HP tidak valid').isMobilePhone('id-ID')
+//  check('email', 'email tidak valid').isEmail(), 
+//  check('nohp', 'No HP tidak valid').isMobilePhone('id-ID')
 
 ],(req,res) => {
   const errors = validationResult(req);
@@ -132,7 +132,7 @@ app.post('/kontak', [
 // proses delete kontak menggunakan request method yang benar
 // download modul method-override(untuk menggunakan http verbs seperti PUT dan DELETE ditempat yang cliennya tidak suport)
 app.delete('/kontak' , (req , res) => {
-  Contact.deleteOne({nama : req.body.nama}).then(() => {
+  Contact.deleteOne({tanggal : req.body.tanggal}).then(() => {
           req.flash('mesage', 'data berhasil dihapus')
           res.redirect('/kontak'); 
         })      
@@ -144,7 +144,7 @@ app.delete('/kontak' , (req , res) => {
 // ubah data kontak
 app.get('/kontak/edit/:nama', async (req,res) => {
 
-  const kontak = await Contact.findOne({ nama : req.params.nama});
+  const kontak = await Contact.findOne({ tanggal : req.params.tanggal});
 
   res.render('editkontak', {
     title : 'form tambah data',
@@ -156,15 +156,15 @@ app.get('/kontak/edit/:nama', async (req,res) => {
 
 //proses ubah data
 app.put('/kontak', [
-  body('nama').custom( async (value, { req }) => {
-    const duplikat = await Contact.findOne({nama : value});
+  body('tanggal').custom( async (value, { req }) => {
+    const duplikat = await Contact.findOne({tanggal : value});
     if(value !== req.body.oldname && duplikat) {
-      throw new Error('nama sudah digunakan')
+      throw new Error('tanggal sudah digunakan')
     } 
     return true;
   }),
- check('email', 'email tidak valid').isEmail(), 
- check('nohp', 'No HP tidak valid').isMobilePhone('id-ID')
+//  check('email', 'email tidak valid').isEmail(), 
+//  check('nohp', 'No HP tidak valid').isMobilePhone('id-ID')
 
 ],(req,res) => {
   const errors = validationResult(req);
@@ -180,9 +180,9 @@ app.put('/kontak', [
     {_id : req.body._id},
     {
       $set: {
-      nama : req.body.nama,
-      email : req.body.email,
-      nohp : req.body.nohp
+      tanggal : req.body.tanggal,
+      materi : req.body.materi,
+      status : req.body.status
     }}
     ).then(() => {
       req.flash('mesage', 'data berhasil diubah')
@@ -195,9 +195,9 @@ app.put('/kontak', [
 
 
   // tombol aksi detail
-app.get('/kontak/:nama', async (req,res) => {
+app.get('/kontak/:tanggal', async (req,res) => {
     // cara mendapatkan data kontak satu orang
-    const kontaks = await Contact.findOne({nama : req.params.nama})
+    const kontaks = await Contact.findOne({tanggal : req.params.tanggal})
 
     res.render('detail', { nama : 'alfin' , title : 'details kontak',
     layout : 'layout/main-layout',
