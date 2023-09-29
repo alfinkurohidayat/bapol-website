@@ -11,7 +11,7 @@ const Contact = mongoose.model('Contact', {
         required : true,
     },
     status : {
-        type : String,
+        type : Boolean,
     }
 })
 

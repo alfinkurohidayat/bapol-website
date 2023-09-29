@@ -1,7 +1,8 @@
 <table>
     <tr>
-      <th>Nama</th>
-      <th>Nomor Hp</th>
+      <th>TANGGAL</th>
+      <th>MATERI</th>
+      <th>STATUS</th>
       <th>Aksi</th>
     </tr>
 
@@ -9,6 +10,7 @@
         <tr>
             <td><%= i++ %> . <%= kon.tanggal %></td>
             <td><%= kon.materi %></td>
+            <td><%= kon.status %></td>
             <td>
               <button onclick="window.location.href='/kontak/<%= kon.tanggal %>'" class="btn">Details</button>
             </td>
