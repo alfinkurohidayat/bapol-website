@@ -92,7 +92,7 @@ app.post('/kontak', [
     return true;
   }),
 
-//  check('email', 'email tidak valid').isEmail(), 
+  check('status', 'status tidak valid').isBoolean(), 
 //  check('nohp', 'No HP tidak valid').isMobilePhone('id-ID')
 
 ],(req,res) => {
@@ -163,7 +163,7 @@ app.put('/kontak', [
     } 
     return true;
   }),
-//  check('email', 'email tidak valid').isEmail(), 
+ check('status', 'status tidak valid').isBoolean(), 
 //  check('nohp', 'No HP tidak valid').isMobilePhone('id-ID')
 
 ],(req,res) => {
