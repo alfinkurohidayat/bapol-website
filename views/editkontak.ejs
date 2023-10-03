@@ -27,15 +27,15 @@
   <!-- memebuat input baru untuk mengirimkan nama sebagai input hidden,agar kita punya akses ke nama lamanya -->
   <input type="hidden" name="oldtanggal" value="<%= (kontak.oldtanggal) ? kontak.oldtanggal : kontak.tanggal %>">
   <div class="form-group">
-    <label for="tanggal">Nama:</label>
-    <input type="text" id="tanggal" name="tanggal" required value="<%= kontak.tanggal %>">
+    <label for="tanggal">Tanggal:</label>
+    <input type="date" id="tanggal" name="tanggal" required value="<%= kontak.tanggal %>">
   </div>
   <div class="form-group">
-    <label for="materi">No.Hp:</label>
+    <label for="materi">Materi:</label>
     <input type="text" id="materi" name="materi" required value="<%= kontak.materi %>">
   </div>
   <div class="form-group">
-    <label for="status">Email:</label>
+    <label for="status">Status:</label>
     <input type="text" id="status" name="status" required value="<%= kontak.status %>">
   </div>
   <div class="form-group">

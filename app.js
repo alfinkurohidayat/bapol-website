@@ -142,7 +142,7 @@ app.delete('/kontak' , (req , res) => {
 
 
 // ubah data kontak
-app.get('/kontak/edit/:nama', async (req,res) => {
+app.get('/kontak/edit/:tanggal', async (req,res) => {
 
   const kontak = await Contact.findOne({ tanggal : req.params.tanggal});
 
@@ -158,10 +158,10 @@ app.get('/kontak/edit/:nama', async (req,res) => {
 app.put('/kontak', [
   body('tanggal').custom( async (value, { req }) => {
     const duplikat = await Contact.findOne({tanggal : value});
-    if(value !== req.body.oldname && duplikat) {
-      throw new Error('tanggal sudah digunakan')
-    } 
-    return true;
+    // if(value !== req.body.oldname && duplikat) {
+    //   throw new Error('tanggal sudah digunakan')
+    // } 
+    // return true;
   }),
  check('status', 'status tidak valid').isBoolean(), 
 //  check('nohp', 'No HP tidak valid').isMobilePhone('id-ID')
