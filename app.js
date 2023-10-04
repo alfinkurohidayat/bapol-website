@@ -51,15 +51,57 @@ app.get('/beranda', (req,res) => {
   })
 
 
-//halaman layanan
+//halaman keuangan
 app.get('/layanan', async (req,res) => {
   const uang = await Uang.find();
 
     res.render('layanan', { nama : 'alfin' , title : 'layanan',
     layout : 'layout/main-layout',
-    uang
+    uang,
+    mesage : req.flash('mesage')
   })
   })
+
+
+// halaman tambah data keuangan
+app.get('/layanan/add', (req,res) => {
+  res.render('adduang', {
+    title : 'form tambah data',
+    layout : 'layout/main-layout'
+  })
+})
+
+
+// proses tambah data keuangan
+app.post('/layanan', [
+  
+  body('tgl').custom(async(value) => {
+    const duplikat = await Uang.findOne({tgl : value})
+    if(duplikat) {
+      
+      throw new Error('tgl sudah digunakan')
+    } 
+
+    return true;
+  }),
+
+
+],(req,res) => {
+  const errors = validationResult(req);
+  if(!errors.isEmpty()){
+   
+    res.render('adduang', {
+      title : 'form tambah data',
+      layout : 'layout/main-layout',
+      errors : errors.array()
+    })
+  }else{
+    Uang.insertMany(req.body).then(() => {
+      req.flash('mesage', 'data berhasil ditambah')
+      res.redirect('/layanan'); 
+    })
+  }
+})
 
 
   //halaman kontak

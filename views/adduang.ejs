@@ -1,0 +1,46 @@
+
+
+<h2>tambah data</h2>
+
+
+<!-- error yang dikirim dari app.js ketika ada yang duplikat -->
+<!-- mengeceknya harus menggunakan typeof -->
+
+<% if (typeof errors != 'undefined') { %>
+  <div class="cool-div">
+    <ul>
+      <% errors.forEach(err => { %>
+         <li><%= err.msg %></li>
+      <% }) %>
+    </ul>
+  </div>
+
+<% } %>
+
+<!-- atribute name pada tag input harus sama dengan property json -->
+<form method="post" action="/layanan">
+  <div class="form-group">
+    <label for="tanggal">Tgl:</label>
+    <input type="date" id="tgl" name="tgl" required>
+  </div>
+  <div class="form-group">
+    <label for="materi">Masuk:</label>
+    <input type="text" id="masuk" name="masuk" required>
+  </div>
+  <div class="form-group">
+    <label for="materi">Keluar:</label>
+    <input type="text" id="keluar" name="keluar" required>
+  </div>
+  <div class="form-group">
+    <label for="status">Keperluan:</label>
+    <input type="text" id="keperluan" name="keperluan" required>
+  </div>
+  <div class="form-group">
+      <button type="button" onclick="window.location.href='/layanan'">Batal</button>
+    <button type="submit" onclick="window.location.href=''">Kirim</button>
+  </div>
+</form>
+
+
+
+
