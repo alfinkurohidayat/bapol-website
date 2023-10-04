@@ -2,16 +2,17 @@ import mongoose from 'mongoose';
 
 //membuat schema dan di export ke app.js
 const Uang = mongoose.model('Uang', {
-    tanggal : {
+    masuk : {
         type : String,
         required : true,
     },
-    materi : {
+    keluar : {
         type : String,
         required : true,
     },
-    status : {
-        type : Boolean,
+    keperluan : {
+        type : String,
+        required : true,
     }
 })
 

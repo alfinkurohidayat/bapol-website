@@ -1,6 +1,7 @@
 import express from 'express';
 import expressLayouts from 'express-ejs-layouts'; // untuk layout yang lebih mudah
 import Contact from './model/contacts.js';
+import Uang from './model/uang.js';
 import session from 'express-session'; //melakukan session pada flash massage
 import cookieParser from 'cookie-parser'; //melakukan cookie pada flash message
 import flash from 'connect-flash'; //modul untuk melakukan flash connect
@@ -51,9 +52,12 @@ app.get('/beranda', (req,res) => {
 
 
 //halaman layanan
-app.get('/layanan', (req,res) => {
+app.get('/layanan', async (req,res) => {
+  const uang = await Uang.find();
+
     res.render('layanan', { nama : 'alfin' , title : 'layanan',
-    layout : 'layout/main-layout'
+    layout : 'layout/main-layout',
+    uang
   })
   })
 
