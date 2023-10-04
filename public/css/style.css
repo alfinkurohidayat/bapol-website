@@ -37,50 +37,6 @@ body {
     color: black;
   }
 
-  .layanan-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  .layanan {
-    width: 200px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .layanan:hover {
-    transform: translateY(-5px);
-  }
-
-  .layanan-icon {
-    font-size: 48px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-
-  .layanan-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-
-  .layanan-description {
-    font-size: 16px;
-    color: #666;
-  }
-
-  img{
-      margin-top: -350px;
-      margin-left: 600px;
-      border-radius: 50%;
-  }
 
 
   .h1{
@@ -101,14 +57,14 @@ body {
   th {
     text-align: left;
     padding: 8px;
-    font-size: 2em;
+    font-size: 0.9em;
   }
 
   td {
     text-align: left;
     padding: 8px;
-    font-size: 1.3em;
-    text-transform: uppercase;
+    font-size: 0.8em;
+    text-transform: capitalize;
   }
 
   th {
@@ -125,12 +81,9 @@ body {
 
 
   /* detail kontak */
-  .card {
+  .card{
     width: 300px;
-    background-color: #fff;
-    border: 1px solid black;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 150px auto;
   }
@@ -175,7 +128,6 @@ body {
 .add a{
   text-decoration: none;
   color: black;
-  outline: 1px solid white;
   font-size: 3em;
   padding: 20px 30px;
   font-weight: bolder;
