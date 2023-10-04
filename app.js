@@ -104,6 +104,88 @@ app.post('/layanan', [
 })
 
 
+
+
+// proses delete kontak menggunakan request method yang benar
+// download modul method-override(untuk menggunakan http verbs seperti PUT dan DELETE ditempat yang cliennya tidak suport)
+app.delete('/layanan' , (req , res) => {
+  Uang.deleteOne({tgl : req.body.tgl}).then(() => {
+          req.flash('mesage', 'data berhasil dihapus')
+          res.redirect('/layanan'); 
+        })      
+});
+
+
+
+
+// ubah data kontak
+app.get('/layanan/edit/:tgl', async (req,res) => {
+
+  const uang = await Uang.findOne({ tgl : req.params.tgl});
+
+  res.render('edituang', {
+    title : 'form tambah data',
+    layout : 'layout/main-layout',
+    uang,
+  })
+})
+
+
+//proses ubah data
+app.put('/layanan', [
+  body('tgl').custom( async (value, { req }) => {
+    const duplikat = await Uang.findOne({tgl : value});
+    // if(value !== req.body.oldname && duplikat) {
+    //   throw new Error('tanggal sudah digunakan')
+    // } 
+    // return true;
+  }),
+
+//  check('nohp', 'No HP tidak valid').isMobilePhone('id-ID')
+
+],(req,res) => {
+  const errors = validationResult(req);
+  if(!errors.isEmpty()){
+    res.render('edituang', {
+      title : 'form ubah data',
+      layout : 'layout/main-layout',
+      errors : errors.array(),
+      kontak : req.body
+    })
+  }else{
+  Uang.updateOne(
+    {_id : req.body._id},
+    {
+      $set: {
+      tgl : req.body.tgl,
+      masuk : req.body.masuk,
+      keluar : req.body.keluar,
+      keperluan : req.body.keperluan
+    }}
+    ).then(() => {
+      req.flash('mesage', 'data berhasil diubah')
+      res.redirect('/layanan'); 
+    })
+  }
+})
+
+
+
+  // tombol aksi detail uang
+  app.get('/layanan/:tgl', async (req,res) => {
+    // cara mendapatkan data kontak satu orang
+    const uang = await Uang.findOne({tgl : req.params.tgl})
+
+    res.render('udetail', { nama : 'alfin' , title : 'details kontak',
+    layout : 'layout/main-layout',
+    uang
+  })
+  })
+
+
+
+
+
   //halaman kontak
   app.get('/kontak', async (req,res) => {
    const kontaks = await Contact.find();
