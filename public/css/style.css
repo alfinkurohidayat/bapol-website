@@ -97,10 +97,8 @@ body {
     margin-bottom: 8px;
   }
   
-  .card-content p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 16px;
+  .card-content > img {
+    opacity: 0.8;
   }
   
   .card-content a {
@@ -183,3 +181,4 @@ button:hover {
 .cool-div:hover {
   background-color: #45a049;
 }
+

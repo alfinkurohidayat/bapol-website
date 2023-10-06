@@ -10,6 +10,10 @@ const Contact = mongoose.model('Contact', {
         type : String,
         required : true,
     },
+    jenis : {
+        type : String,
+        require : true
+    },
     status : {
         type : Boolean,
     }

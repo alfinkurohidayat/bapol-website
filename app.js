@@ -118,7 +118,7 @@ app.delete('/layanan' , (req , res) => {
 
 
 
-// ubah data kontak
+// ubah data uang
 app.get('/layanan/edit/:tgl', async (req,res) => {
 
   const uang = await Uang.findOne({ tgl : req.params.tgl});
@@ -310,6 +310,7 @@ app.put('/kontak', [
       $set: {
       tanggal : req.body.tanggal,
       materi : req.body.materi,
+      jenis : req.body.jenis,
       status : req.body.status
     }}
     ).then(() => {
