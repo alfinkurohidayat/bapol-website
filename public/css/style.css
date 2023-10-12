@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: aqua;
+    background-color: rgb(231, 238, 238);
     overflow: hidden;
   }
 #b-flex{
@@ -9,22 +9,23 @@ body {
   justify-content: space-between;
 }
   .navbar {
-    width: 15%;
+    width: 20%;
     height: 100vh;
     display: block;
     background-color: #333;
     overflow: hidden;
     align-items: center;
+    text-align: center;
     
   }
 
-  .navbar h4 {
+  .navbar > .move {
     color: #d80505;
-    text-align: center;
+    display: flex;
+    /* text-align: center; */
     text-decoration: none;
     font-size: 17px;
     transition: all .5s;
-    padding: 0px 60px;
     font-size: 1.5em;
     text-transform: uppercase;
     cursor: pointer;
@@ -36,152 +37,15 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    transition: all .5s;
+    transition: all .3s;
   }
+
+.navbar > a:hover{
+  background-color: #fff;
+  color: black;
+}
 
   .h1{
     text-align: center;
   }
 
-.tbl-h2{
-  font-size: 3em;
-  text-align: center;
-}
-
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  th {
-    text-align: left;
-    padding: 8px;
-    font-size: 0.9em;
-  }
-
-  td {
-    text-align: left;
-    padding: 8px;
-    font-size: 0.8em;
-    text-transform: capitalize;
-  }
-
-  th {
-    background-color: #4CAF50;
-    color: white;
-  }
-
-  .btn{
-    background-color: white;
-    padding: 5px 40px;
-    border: none;
-    color: black;
-  }
-
-
-  /* detail kontak */
-  .card{
-    width: 300px;
-    border-radius: 4px;
-    text-align: center;
-    margin: 150px auto;
-  }
-  
-  .card-content {
-    padding: 16px;
-  }
-  
-  .card-content h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-  
-  .card-content > img {
-    opacity: 0.8;
-  }
-  
-  .card-content a {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
-  }
-  
-  .card-content a:hover {
-    background-color: #45a049;
-  }
-
-.h1k{
-  color: black;
-}
-
-.add{
-  text-align: center;
-  margin-top: 70px;
-}
-
-.add a{
-  text-decoration: none;
-  color: black;
-  font-size: 3em;
-  padding: 20px 30px;
-  font-weight: bolder;
-}
-
-
-/* add kontak */
-form{
-  text-align: center;
-}
-.form-group {
-  margin-bottom: 16px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-}
-
-input, textarea {
-  width: 30%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* div pesan error */
-.cool-div {
-  width: 300px;
-  height: 200px;
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  margin: auto;
-}
-
-.cool-div:hover {
-  background-color: #45a049;
-}
-
-.container{
-  width: 85%;
-}
