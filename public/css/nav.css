@@ -1,3 +1,42 @@
+ .navbar > p{
+    text-align: start;
+    padding-left: 9px;
+    color: grey;
+ }
+ 
+ .move{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-around;
+ }
+
+ .move > h6{
+    width: 65%;
+    border: 1px solid white;
+    padding: 9px;
+    border-radius: 5px;
+    color: white;
+ }
+ 
+ .move > p{
+    width: 20%;
+    border: 1px solid white;
+    padding: 3.5px;
+    border-radius: 5px;
+ }
+ 
+
+ .click2{
+    cursor: pointer;
+    display: none;
+    font-size: 2em;
+    margin-top: 0;
+    height: 46px;
+ }
+
+
  /* dropdown menu */
   .dropdown {
     
@@ -42,3 +81,4 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+

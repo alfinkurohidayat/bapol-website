@@ -45,7 +45,7 @@ app.use(flash());
 // halaman home
 app.get('/beranda', (req,res) => {
     res.render('index', {
-      title : 'form tambah data',
+      title : 'AlfinGPT',
       layout : 'layout/main-layout'
     })
   })
@@ -334,10 +334,18 @@ app.get('/kontak/:tanggal', async (req,res) => {
   })
   })
 
+
+  app.use('/add', (req,res) => {
+    res.render('add' , {
+      title : 'form tambah data',
+      layout : 'layout/main-layout'
+    })
+  })
+
 //menangani jika error
   app.use('/', (req,res) => {
     res.render('index', {
-      title : 'form tambah data',
+      title : 'AlfinGPT',
       layout : 'layout/main-layout'
     })
   })
