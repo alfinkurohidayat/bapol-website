@@ -16,8 +16,9 @@
           <!-- <a onclick="return confirm('yakin ?')" href="/kontak/delete/<%= uang.tanggal %>">hapus</a> -->
           <form action="/layanan?_method=DELETE" method="post">
             <input type="hidden" name="tgl" value="<%= uang.tgl %>">
+            <button onclick="return confirm('yakin ?')">hapus</button>
           </form>
-          <button onclick="return confirm('yakin ?')">hapus</button>
+          
           <!-- untuk tombol ubah -->
           <a  href="/layanan/edit/<%= uang.tgl %>">ubah</a>
 

@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser'; //melakukan cookie pada flash message
 import flash from 'connect-flash'; //modul untuk melakukan flash connect
 import {body, validationResult, check} from "express-validator"; //modul validasi
 import  methodOverride  from 'method-override'; //delete
+import mongoose from 'mongoose';
 
 import './utils/db.js';
 
@@ -341,6 +342,50 @@ app.get('/kontak/:tanggal', async (req,res) => {
       layout : 'layout/main-layout'
     })
   })
+
+
+
+
+  // Skema untuk menambahkan database
+const itemSchema = new mongoose.Schema({
+  nama: String,
+  deskripsi: String,
+});
+
+const Item = mongoose.model('Item', itemSchema);
+
+app.use(express.urlencoded({ extended: true }));
+
+// Rute untuk menambahkan item
+app.post('/add/tambah-item', (req, res) => {
+  const { nama, deskripsi } = req.body;
+
+  const newItem = new Item({
+    nama: nama,
+    deskripsi: deskripsi,
+  });
+
+  newItem.save((err) => {
+    if (err) {
+      res.status(500).send('Gagal menambahkan item ke database.');
+    } else {
+      res.status(200).send('Item berhasil ditambahkan ke database.');
+    }
+  });
+});
+
+
+
+
+
+
+  app.use('/close', (req,res) => {
+    res.render('index' , {
+      title : 'form tambah data',
+      layout : 'layout/main-layout'
+    })
+  })
+
 
 //menangani jika error
   app.use('/', (req,res) => {

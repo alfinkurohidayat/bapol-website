@@ -16,8 +16,9 @@
           <!-- <a onclick="return confirm('yakin ?')" href="/kontak/delete/<%= kontaks.tanggal %>">hapus</a> -->
           <form action="/kontak?_method=DELETE" method="post">
             <input type="hidden" name="tanggal" value="<%= kontaks.tanggal %>">
+            <button onclick="return confirm('yakin ?')">hapus</button>
           </form>
-          <button onclick="return confirm('yakin ?')">hapus</button>
+         
           <!-- untuk tombol ubah -->
           <a  href="/kontak/edit/<%= kontaks.tanggal %>">ubah</a>
 

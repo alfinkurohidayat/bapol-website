@@ -13,4 +13,3 @@ show.addEventListener('click' , () => {
     document.querySelector('.click2').style.display='none';
 })
 
-
