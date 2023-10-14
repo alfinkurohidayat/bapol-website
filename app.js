@@ -345,6 +345,7 @@ app.get('/kontak/:tanggal', async (req,res) => {
 
 
 
+import { jdl } from './public/js/add.js';
 
   // Skema untuk menambahkan database
 const itemSchema = new mongoose.Schema({
