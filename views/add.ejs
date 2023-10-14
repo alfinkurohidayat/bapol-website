@@ -1,7 +1,32 @@
-<h1>hallo</h1>
+<div class="forms">
+  <label for="nama-jdl">Nama Jadwal:</label>
+  <input type="text" id="nama-jdl" name="nama-jdl" required><br>
+  <label for="button">Jumlah Field :</label>
+  <button id="button" name="button">0</button>
+</div>
 
-<form action="/close?_method=DELETE" method="post">
-    <button onclick="return confirm('yakin ?')">x</button>
-  </form>
 
-  <a href="/add/tambah-item">ss</a>
+<form method="post" action="/kontak">
+  <div class="form-group">
+    <label for="tanggal">Tanggal:</label>
+    <input type="text" id="" name="" required>
+  </div>
+  <div class="form-group">
+    <label for="materi">Materi:</label>
+    <input type="text" id="" name="" required>
+  </div>
+  <div class="form-group">
+    <label for="materi">Jenis:</label>
+    <input type="text" id="" name="" required>
+  </div>
+  <div class="form-group">
+    <label for="status">Status:</label>
+    <input type="text" id="" name="" required>
+  </div>
+  <div class="form-group">
+    <form action="/close?_method=DELETE" method="post">
+      <button onclick="return confirm('yakin ?')">Batal</button>
+    </form>
+    <button type="submit" onclick="window.location.href='/add/tambah-item'">Kirim</button>
+  </div>
+</form>
