@@ -382,12 +382,12 @@ app.get('/createcollection', (req, res) => {
 });
 
 // Endpoint untuk membuat koleksi dan mendefinisikan struktur kolom
+// Tambahkan koleksi yang baru dibuat ke daftar koleksi yang ada
+const koleksiList = []; // Ini adalah array untuk menyimpan daftar koleksi
+
 app.post('/createcollection', (req, res) => {
   const { collectionName, fields } = req.body;
-  res.render('tampildata' , {
-    title : 'form tambah data',
-    layout : 'layout/main-layout'
-  })
+
   if (!collectionName || !fields) {
     res.status(400).json({ error: 'Nama koleksi dan struktur kolom diperlukan' });
     return;
@@ -401,14 +401,27 @@ app.post('/createcollection', (req, res) => {
   const collectionSchema = new mongoose.Schema(schema);
   const newCollection = mongoose.model(collectionName, collectionSchema);
 
-  newCollection.create({})
+  newCollection.createCollection()
     .then(() => {
-      res.json({ message: `Koleksi ${collectionName} berhasil dibuat` });
+      // Tambahkan koleksi yang baru dibuat ke daftar koleksi
+      koleksiList.push(collectionName);
+
+      res.render('tampildata', { 
+        message: 'Koleksi berhasil dibuat tanpa dokumen.' ,
+        koleksiList, // Mengirimkan daftar koleksi ke halaman tampilan
+        title : 'form tambah data',
+        layout : 'layout/main-layout'
+      });
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
 });
+
+
+
+
+
 
 
 

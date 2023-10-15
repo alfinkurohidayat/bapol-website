@@ -53,10 +53,11 @@
         </select>
       </div>
     </div>
+    <button type="button" onclick="removeField()">Hapus Field</button>
     <button type="button" onclick="addField()">Tambah Field</button>
     <br>
     <br>
-    <input type="submit" value="Buat Koleksi" onclick="window.location.href='tampildata-ejs'">
+    <input type="submit" value="Buat Koleksi" onclick="window.location.href='tampildata.ejs'">
   </form>
   <script>
     function addField() {
@@ -64,5 +65,14 @@
       const field = document.querySelector('.field').cloneNode(true);
       fieldsDiv.appendChild(field);
     }
+
+    function removeField() {
+  const fieldsDiv = document.getElementById('fields');
+  const field = fieldsDiv.querySelector('.field');
+  if (field) {
+    fieldsDiv.removeChild(field);
+  }
+}
+
   </script>
 
