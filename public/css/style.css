@@ -47,5 +47,33 @@ body {
 
   .h1{
     text-align: center;
+    color: grey;
   }
+
+.icon{
+  display: flex;
+  margin: 20px auto;
+  height: 50px;
+  width: 270px;
+  background-color: #fff;
+  border-radius: 6px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon > button{
+  background-color: rgb(231, 238, 238);
+  border-radius: 6px;
+  height: 40px;
+  width: 120px;
+  color: grey;
+}
+
+.icon > button:nth-child(1){
+  background-color:rgb(231, 238, 238);
+}
+
+.icon > button:nth-child(2){
+  background-color: white;
+}
 
