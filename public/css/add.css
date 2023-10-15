@@ -3,3 +3,15 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.Field{
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.Field > button{
+    background-color: #fff;
+    color: black;
+}
+

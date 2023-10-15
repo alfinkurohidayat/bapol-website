@@ -1,8 +1,12 @@
-<div class="forms">
+<!-- <div class="forms">
   <label for="nama-jdl">Nama Jadwal:</label>
   <input type="text" id="nama-jdl" name="nama-jdl" required><br>
   <label for="button">Jumlah Field :</label>
-  <button id="button" name="button">0</button>
+  <div class="Field">
+    <button id="button-min" name="button">➖</button>
+    <input type="text" value="0" disabled>
+    <button id="button-plus" name="button">➕</button>
+  </div>
 </div>
 
 
@@ -29,4 +33,36 @@
     </form>
     <button type="submit" onclick="window.location.href='/add/tambah-item'">Kirim</button>
   </div>
-</form>
+</form> -->
+
+
+
+  <h1>Buat Koleksi MongoDB</h1>
+  <form action="/createcollection" method="post">
+    <label for="collectionName">Nama Koleksi:</label>
+    <input type="text" id="collectionName" name="collectionName" required>
+    <br>
+    <h2>Definisi Field</h2>
+    <div id="fields">
+      <div class="field">
+        <input type="text" name="fields[][name]" placeholder="Nama Field">
+        <select name="fields[][type]">
+          <option value="String">String</option>
+          <option value="Number">Number</option>
+          <!-- Tambahkan tipe data lain sesuai kebutuhan -->
+        </select>
+      </div>
+    </div>
+    <button type="button" onclick="addField()">Tambah Field</button>
+    <br>
+    <br>
+    <input type="submit" value="Buat Koleksi" onclick="window.location.href='tampildata-ejs'">
+  </form>
+  <script>
+    function addField() {
+      const fieldsDiv = document.getElementById('fields');
+      const field = document.querySelector('.field').cloneNode(true);
+      fieldsDiv.appendChild(field);
+    }
+  </script>
+

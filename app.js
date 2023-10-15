@@ -344,35 +344,70 @@ app.get('/kontak/:tanggal', async (req,res) => {
   })
 
 
+//   // Skema untuk menambahkan database
+// const itemSchema = new mongoose.Schema({
+//   nama: String,
+//   deskripsi: String,
+// });
 
-import { jdl } from './public/js/add.js';
+// const Item = mongoose.model('Item', itemSchema);
 
-  // Skema untuk menambahkan database
-const itemSchema = new mongoose.Schema({
-  nama: String,
-  deskripsi: String,
+// app.use(express.urlencoded({ extended: true }));
+
+// // Rute untuk menambahkan item
+// app.post('/add/tambah-item', (req, res) => {
+//   const { nama, deskripsi } = req.body;
+
+//   const newItem = new Item({
+//     nama: nama,
+//     deskripsi: deskripsi,
+//   });
+
+//   newItem.save((err) => {
+//     if (err) {
+//       res.status(500).send('Gagal menambahkan item ke database.');
+//     } else {
+//       res.status(200).send('Item berhasil ditambahkan ke database.');
+//     }
+//   });
+// });
+
+
+
+
+
+// Endpoint untuk menampilkan halaman pembuatan koleksi
+app.get('/createcollection', (req, res) => {
+  res.render('add');
 });
 
-const Item = mongoose.model('Item', itemSchema);
+// Endpoint untuk membuat koleksi dan mendefinisikan struktur kolom
+app.post('/createcollection', (req, res) => {
+  const { collectionName, fields } = req.body;
+  res.render('tampildata' , {
+    title : 'form tambah data',
+    layout : 'layout/main-layout'
+  })
+  if (!collectionName || !fields) {
+    res.status(400).json({ error: 'Nama koleksi dan struktur kolom diperlukan' });
+    return;
+  }
 
-app.use(express.urlencoded({ extended: true }));
-
-// Rute untuk menambahkan item
-app.post('/add/tambah-item', (req, res) => {
-  const { nama, deskripsi } = req.body;
-
-  const newItem = new Item({
-    nama: nama,
-    deskripsi: deskripsi,
+  const schema = {};
+  fields.forEach((field) => {
+    schema[field.name] = field.type || String; // Default ke String jika tidak ditentukan
   });
 
-  newItem.save((err) => {
-    if (err) {
-      res.status(500).send('Gagal menambahkan item ke database.');
-    } else {
-      res.status(200).send('Item berhasil ditambahkan ke database.');
-    }
-  });
+  const collectionSchema = new mongoose.Schema(schema);
+  const newCollection = mongoose.model(collectionName, collectionSchema);
+
+  newCollection.create({})
+    .then(() => {
+      res.json({ message: `Koleksi ${collectionName} berhasil dibuat` });
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
 });
 
 

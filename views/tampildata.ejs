@@ -1,0 +1,26 @@
+<% if (!collectionName) { %> 
+    <div class="card">
+      <div class="card-content">
+          <h1 class="h1k">data tidak ada</h1>
+          <a href="/kontak">Kembali</a>
+      </div>
+    </div>
+<% } else {%>
+    <h1>Data Koleksi <%= collectionName %></h1>
+    <table>
+      <tr>
+        <% for (var field in data[0]) { %>
+          <th><%= field %></th>
+        <% } %>
+      </tr>
+      <% data.forEach(function(item) { %>
+        <tr>
+          <% for (var field in item) { %>
+            <td><%= item[field] %></td>
+          <% } %>
+        </tr>
+      <% }); %>
+    </table>
+<% } %>
+ 
+

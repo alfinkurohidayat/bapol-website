@@ -1,1 +1,0 @@
-export const jdl = document.querySelector('#nama-jdl').value;
