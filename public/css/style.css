@@ -97,13 +97,14 @@ body {
   transition: all .3s;
 }
 
+
 .dropbtn1:hover{
-  background-color: #fff;
+  background-color: rgb(231, 238, 238);
   color: black;
 }
 
 .dropbtn2:hover{
-  background-color: #fff;
+  background-color: rgb(231, 238, 238);
   color: black;
 }
 
@@ -133,4 +134,13 @@ body {
 
 .dropdown:hover .dropdown-contents {
   display: block;
+}
+
+
+.white{
+  background-color: white;
+}
+
+.white:hover{
+  background-color: #fff;
 }

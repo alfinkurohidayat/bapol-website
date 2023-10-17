@@ -344,35 +344,6 @@ app.get('/kontak/:tanggal', async (req,res) => {
   })
 
 
-//   // Skema untuk menambahkan database
-// const itemSchema = new mongoose.Schema({
-//   nama: String,
-//   deskripsi: String,
-// });
-
-// const Item = mongoose.model('Item', itemSchema);
-
-// app.use(express.urlencoded({ extended: true }));
-
-// // Rute untuk menambahkan item
-// app.post('/add/tambah-item', (req, res) => {
-//   const { nama, deskripsi } = req.body;
-
-//   const newItem = new Item({
-//     nama: nama,
-//     deskripsi: deskripsi,
-//   });
-
-//   newItem.save((err) => {
-//     if (err) {
-//       res.status(500).send('Gagal menambahkan item ke database.');
-//     } else {
-//       res.status(200).send('Item berhasil ditambahkan ke database.');
-//     }
-//   });
-// });
-
-
 
 
 
