@@ -1,0 +1,39 @@
+
+  <div class="main">
+    <div class="topbar">
+      <div class="toggle">
+        <ion-icon name="menu-outline"></ion-icon>
+      </div>
+    </div>
+
+    <!-- ======================= Cards ================== -->
+    <div class="cardBox-bp">
+      <% products.forEach(product => { %>
+      <div class="card">
+        <div>
+          <div class="numbers"><%= product.name %></div>
+          <div class="cardName">Rp <%= product.price %></div>
+          <div class="dropdown">
+            <button class="dropbtn" onclick="buy('<%= product.name %>', <%= product.price %>)">Buy Now</button>
+            <div class="dropdown-content">
+              <a href="#" onclick="payWithDebit('<%= product.name %>', <%= product.price %>)">Debit</a>
+              <a href="#" onclick="payWithDana('<%= product.name %>', <%= product.price %>)">Dana</a>
+              <a href="#" onclick="payWithWa('<%= product.name %>', <%= product.price %>)">Wa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+
+    <div class="topbar" onclick="window.location.href='/produk'">
+      <div class="toggles">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  
+    
+ 
+
