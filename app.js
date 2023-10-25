@@ -38,10 +38,19 @@ app.use(flash());
 // halaman home
 app.get('/beranda', (req,res) => {
     res.render('index', {
-      title : 'AlfinGPT',
+      title : 'beranda',
       layout : 'layout/main-layout'
     })
   })
+
+
+  // halaman home
+app.get('/produk', (req,res) => {
+  res.render('produk', {
+    title : 'produk',
+    layout : 'layout/main-layout'
+  })
+})
 
 
 //menangani jika error
