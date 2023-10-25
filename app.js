@@ -56,7 +56,7 @@ app.get('/produk', (req,res) => {
 //menangani jika error
   app.use('/', (req,res) => {
     res.render('index', {
-      title : 'AlfinGPT',
+      title : 'Bapol',
       layout : 'layout/main-layout'
     })
   })
