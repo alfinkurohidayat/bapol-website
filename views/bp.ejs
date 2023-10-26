@@ -8,22 +8,62 @@
 
     <!-- ======================= Cards ================== -->
     <div class="cardBox-bp">
-      <% products.forEach(product => { %>
       <div class="card">
         <div>
-          <div class="numbers"><%= product.name %></div>
-          <div class="cardName">Rp <%= product.price %></div>
+          <div class="numbers">50 gram</div>
+          <div class="cardName">Rp 5.000</div>
           <div class="dropdown">
-            <button class="dropbtn" onclick="buy('<%= product.name %>', <%= product.price %>)">Buy Now</button>
+            <button class="dropbtn">Buy Now</button>
             <div class="dropdown-content">
-              <a href="#" onclick="payWithDebit('<%= product.name %>', <%= product.price %>)">Debit</a>
-              <a href="#" onclick="payWithDana('<%= product.name %>', <%= product.price %>)">Dana</a>
-              <a href="#" onclick="payWithWa('<%= product.name %>', <%= product.price %>)">Wa</a>
+              <a href="#" onclick="openWhatsApp()">WhatsApp</a>
+              <a href="#" onclick="openInstagram()">Instagram</a>
             </div>
           </div>
         </div>
       </div>
-      <% }); %>
+
+      <div class="card">
+        <div>
+          <div class="numbers">250 gram</div>
+          <div class="cardName">Rp 20.000</div>
+          <div class="dropdown">
+            <button class="dropbtn">Buy Now</button>
+            <div class="dropdown-content">
+              <a href="#" onclick="openWhatsApp()">WhatsApp</a>
+              <a href="#" onclick="openInstagram()">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="numbers">500 gram</div>
+          <div class="cardName">Rp 35.000</div>
+          <div class="dropdown">
+            <button class="dropbtn">Buy Now</button>
+            <div class="dropdown-content">
+              <a href="#" onclick="openWhatsApp()">WhatsApp</a>
+              <a href="#" onclick="openInstagram()">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="numbers">1 kg</div>
+          <div class="cardName">Rp 70.000</div>
+          <div class="dropdown">
+            <button class="dropbtn">Buy Now</button>
+            <div class="dropdown-content">
+              <a href="#" onclick="openWhatsApp()">WhatsApp</a>
+              <a href="#" onclick="openInstagram()">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="topbar" onclick="window.location.href='/produk'">

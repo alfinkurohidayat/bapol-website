@@ -1,18 +1,24 @@
-import io from 'socket.io-client'
+ // Fungsi untuk membuka WhatsApp
+ function openWhatsApp() {
+  // Ganti nomor WA dan pesan sesuai dengan yang Anda inginkan
+  var phoneNumber = "6282175577847"; // Ganti dengan nomor WA yang ingin Anda tuju
+  var message = "Halo, saya ingin menghubungi Anda.";
 
-const socket = io();
-        function buy(productName, price) {
-          // Kirim permintaan pembelian ke server melalui WebSocket
-          socket.emit('buyProduct', { productName, price });
-        }
-    
-    function payWithDebit(productName, price) {
-        // Di sini Anda dapat menambahkan logika untuk melakukan pembayaran dengan Debit
-        console.log(`Membayar dengan Debit untuk ${productName} seharga Rp ${price}`);
-        
-        // Menangani respons dari server saat transaksi sukses
-        socket.on('transactionSuccess', (message) => {
-          alert(message);
-        });
-      }
-    
+  // URL WA dengan nomor dan pesan
+  var waURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  // Buka WhatsApp di jendela baru
+  window.open(waURL);
+}
+
+// Fungsi untuk membuka Instagram
+function openInstagram() {
+  // Ganti dengan username Instagram yang ingin Anda tuju
+  var instagramUsername = "bapol.id"; // Ganti dengan username Instagram yang ingin Anda tuju
+
+  // URL profil Instagram
+  var instagramURL = `https://www.instagram.com/${instagramUsername}`;
+
+  // Buka profil Instagram di jendela baru
+  window.open(instagramURL);
+}

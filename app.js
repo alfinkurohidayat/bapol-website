@@ -5,17 +5,8 @@ import cookieParser from 'cookie-parser'; //melakukan cookie pada flash message
 import flash from 'connect-flash'; //modul untuk melakukan flash connect
 
 
-import http from 'http'; // Import modul 'http'
-import { Server } from 'socket.io';
-
 
 const app = express();
-
-const server = http.createServer(app); // Buat server HTTP
-
-const io = new Server(server); // Gunakan server HTTP untuk 'socket.io'
-
-
 const port = 3200;
 
 
@@ -71,36 +62,12 @@ app.get('/produk', (req,res) => {
   app.get('/produk/bp', (req, res) => {
     // Render tampilan EJS (transaksi.ejs) dan kirimkan data produk
     res.render('bp', { 
-      products ,
       title : 'basreng pedas',
       layout : 'layout/main-layout'
     });
   });
 
 
-  const products = [
-    { name: 'Produk A', price: 10000 },
-    { name: 'Produk B', price: 20000 },
-    // Tambahkan produk lain di sini
-  ];
-  
-  io.on('connection', (socket) => {
-    console.log('Client terhubung');
-  
-    // Mendengarkan pembelian produk
-    socket.on('buyProduct', (productData) => {
-      // Di sini Anda dapat menambahkan logika untuk meng-handle transaksi
-      console.log(`Membeli ${productData.productName} seharga Rp ${productData.price}`);
-      
-      // Emitkan perubahan atau pesan ke semua klien yang terhubung
-      io.emit('transactionSuccess', `Transaksi sukses: ${productData.productName}`);
-    });
-  
-    // Ketika klien terputus
-    socket.on('disconnect', () => {
-      console.log('Client terputus');
-    });
-  });
 
 //menangani jika error
   app.use('/', (req,res) => {
