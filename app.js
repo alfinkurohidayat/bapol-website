@@ -80,8 +80,8 @@ app.get('/produk', (req,res) => {
 
 
   const data = {
-    pageTitle: 'My EJS Page',
-    appName: 'My EJS App',
+    pageTitle: 'index.ejs',
+    appName: 'app.ejs',
 };
 
   fs.readFile('views/index.ejs', 'utf8', (err, template) => {
