@@ -3,7 +3,8 @@ import expressLayouts from 'express-ejs-layouts'; // untuk layout yang lebih mud
 import session from 'express-session'; //melakukan session pada flash massage
 import cookieParser from 'cookie-parser'; //melakukan cookie pada flash message
 import flash from 'connect-flash'; //modul untuk melakukan flash connect
-
+import fs from 'node:fs';
+import ejs from 'ejs';
 
 
 const app = express();
@@ -76,6 +77,34 @@ app.get('/produk', (req,res) => {
       layout : 'layout/main-layout'
     })
   })
+
+
+  const data = {
+    pageTitle: 'My EJS Page',
+    appName: 'My EJS App',
+};
+
+  fs.readFile('views/index.ejs', 'utf8', (err, template) => {
+    if (err) {
+        throw err;
+    }
+
+    // Merender berkas EJS
+    ejs.render(template, data, (err, renderedHTML) => {
+        if (err) {
+            throw err;
+        }
+
+        // Simpan hasil rendering ke berkas HTML
+        fs.writeFile('index.html', renderedHTML, (err) => {
+            if (err) {
+                throw err;
+            }
+
+            console.log('Berkas HTML berhasil dihasilkan.');
+        });
+    });
+});
 
 
 app.listen(port, () => {
