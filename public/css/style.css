@@ -320,13 +320,13 @@ body {
   padding: 10px;
 }
 .details .recentOrders table tr td:last-child {
-  text-align: end;
+  text-align: start;
 }
 .details .recentOrders table tr td:nth-child(2) {
-  text-align: end;
+  text-align: start;
 }
 .details .recentOrders table tr td:nth-child(3) {
-  text-align: center;
+  text-align: start;
 }
 .status.delivered {
   padding: 2px 4px;
