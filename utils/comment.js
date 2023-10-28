@@ -23,7 +23,7 @@ export const loadComment = () => {
 export const findComment = email => {
     const kontak = loadComment();
     const kontakf = kontak.find(
-        (kontak) => kontak.email.toLowerCase() ===email.toLowerCase()
+        (kontak) => kontak.email.toLowerCase() === email.toLowerCase()
     );
     return kontakf;
  }

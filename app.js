@@ -87,6 +87,10 @@ app.get('/produk', (req,res) => {
 
   // halaman detail produk
 
+  const bp = [
+              {berat : "50 gram" , harga : "5.000"},
+             ];
+
   app.get('/produk/bp', (req, res) => {
     // Render tampilan EJS (transaksi.ejs) dan kirimkan data produk
     res.render('bp', { 
