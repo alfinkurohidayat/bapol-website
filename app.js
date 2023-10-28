@@ -85,7 +85,7 @@ app.get('/produk', (req,res) => {
     const bp = [
       {berat : "50 gram" , harga : "5.000"},
       {berat : "250 gram" , harga : "20.000"},
-      {berat : "590 gram" , harga : "35.000"},
+      {berat : "500 gram" , harga : "35.000"},
       {berat : "1 kg" , harga : "70.000"}
      ];
     // Render tampilan EJS (transaksi.ejs) dan kirimkan data produk
@@ -96,6 +96,65 @@ app.get('/produk', (req,res) => {
     });
   });
 
+
+
+  app.get('/produk/bo', (req, res) => {
+    const bo = [
+      {berat : "50 gram" , harga : "5.000"},
+      {berat : "250 gram" , harga : "20.000"},
+      {berat : "500 gram" , harga : "35.000"},
+      {berat : "1 kg" , harga : "70.000"}
+     ];
+    // Render tampilan EJS (transaksi.ejs) dan kirimkan data produk
+    res.render('bo', { 
+      bo,
+      title : 'basreng original',
+      layout : 'layout/main-layout'
+    });
+  });
+
+
+
+  app.get('/produk/ci', (req, res) => {
+    const ci = [
+      {berat : "50 gram" , harga : "5.000"}
+     ];
+    // Render tampilan EJS (transaksi.ejs) dan kirimkan data produk
+    res.render('ci', { 
+      ci,
+      title : 'basreng original',
+      layout : 'layout/main-layout'
+    });
+  });
+
+
+
+
+  app.get('/produk/ma', (req, res) => {
+    const ma = [
+      {berat : "50 gram" , harga : "6.000"}
+     ];
+    // Render tampilan EJS (transaksi.ejs) dan kirimkan data produk
+    res.render('ma', { 
+      ma,
+      title : 'basreng original',
+      layout : 'layout/main-layout'
+    });
+  });
+
+
+
+  app.get('/produk/mi', (req, res) => {
+    const mi = [
+      {berat : "50 gram" , harga : "6.000"}
+     ];
+    // Render tampilan EJS (transaksi.ejs) dan kirimkan data produk
+    res.render('mi', { 
+      mi,
+      title : 'basreng original',
+      layout : 'layout/main-layout'
+    });
+  });
 
 
 //menangani jika error

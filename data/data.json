@@ -1,7 +1,7 @@
 [
     {"link" : "/produk/bp" , "nama" : "Basreng Pedas" , "gambar" : "/img/basreng.jpeg" , "desk" : "Basreng pedas merupakan produk terbaik kami, Sangat cocok dimakan dengan nasi hangat🍚"},
-    {"link" : "#" , "nama" : "Basreng Original" , "gambar" : "/img/original.jpeg" , "desk" : "Bagi kalian para pencinta basreng tapi tidak suka pedas, Produk ini sangat cocok👍"},
-    {"link" : "#" , "nama" : "Cimol Pedas" , "gambar" : "/img/cimol.jpeg" ,  "desk" : "Cimol pedas juga sangat cocok bagi pencinta pedas, Rasanya yang gurih jadi buat ketagihan😋"},
-    {"link" : "#" , "nama" : "Macaroni Pedas" , "gambar" : "/img/macaroni.jpeg" , "desk" : "Bagi pencinta macaroni kami sangat menyarankan produk ini, Rasa pedas dan gurih bercampur jadi satu🍟"},
-    {"link" : "#" , "nama" : "Mie Gulung Pedas" , "gambar" : "/img/mie gulung.jpeg" , "desk" : "Pencinta mie gulung wajib coba, pedasnya poll🥵"}
+    {"link" : "/produk/bo" , "nama" : "Basreng Original" , "gambar" : "/img/original.jpeg" , "desk" : "Bagi kalian para pencinta basreng tapi tidak suka pedas, Produk ini sangat cocok👍"},
+    {"link" : "/produk/ci" , "nama" : "Cimol Pedas" , "gambar" : "/img/cimol.jpeg" ,  "desk" : "Cimol pedas juga sangat cocok bagi pencinta pedas, Rasanya yang gurih jadi buat ketagihan😋"},
+    {"link" : "/produk/ma" , "nama" : "Macaroni Pedas" , "gambar" : "/img/macaroni.jpeg" , "desk" : "Bagi pencinta macaroni kami sangat menyarankan produk ini, Rasa pedas dan gurih bercampur jadi satu🍟"},
+    {"link" : "/produk/mi" , "nama" : "Mie Gulung Pedas" , "gambar" : "/img/mie gulung.jpeg" , "desk" : "Pencinta mie gulung wajib coba, pedasnya poll🥵"}
 ]
