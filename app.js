@@ -52,6 +52,28 @@ app.get('/beranda', (req,res) => {
 
 
 
+  app.post('/',(req,res) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+      //  jika ada duplikat munculkan halaman apa
+      res.render('index', {
+        title : 'comment',
+        layout : 'layout/main-layout'
+      })
+    }else{
+      // membuat method baru di folder utils > comment.js
+    addComment(req.body);
+  
+  
+      // ketika data berhasil masuk kita lakukan redirect()  agar kembali ke halaman kontak dengan data baru
+    res.redirect('/beranda'); 
+    // yang akan menengani buka post tetapi get
+    }
+  })
+
+
+
+
   // halaman produk
 app.get('/produk', (req,res) => {
   const produk = loadData();

@@ -20,10 +20,10 @@ export const loadComment = () => {
 }
 
 // cari kontak berdasarkan nama
-export const findComment = nama => {
+export const findComment = email => {
     const kontak = loadComment();
     const kontakf = kontak.find(
-        (kontak) => kontak.nama.toLowerCase() === nama.toLowerCase()
+        (kontak) => kontak.email.toLowerCase() ===email.toLowerCase()
     );
     return kontakf;
  }

@@ -413,7 +413,7 @@ body {
   width: 100%;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(1, 2fr);
+  grid-template-columns:repeat(1fr, 1fr);
   grid-gap: 30px;
   /* margin-top: 10px; */
 }
@@ -444,9 +444,7 @@ body {
   border-collapse: collapse;
   margin-top: 1px;
 }
-/* .details-c table thead td {
 
-} */
 .details-c .recentOrders-c table tr {
   color: var(--black1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -454,10 +452,10 @@ body {
 .details-c .recentOrders-c table tr:last-child {
   border-bottom: none;
 }
-.details-c .recentOrders-c table tbody tr:hover {
+/* .details-c .recentOrders-c table tbody tr:hover {
   background: var(--blue);
   color: var(--white);
-}
+} */
 .details-c .recentOrders-c table tr td {
   padding: 10px;
 }
@@ -465,10 +463,10 @@ body {
   text-align: start;
 }
 .details-c .recentOrders-c table tr td:nth-child(2) {
-  text-align: start;
+  text-align: end;
 }
 .details-c .recentOrders-c table tr td:nth-child(3) {
-  text-align: start;
+  text-align: center;
 
 }
 
@@ -482,6 +480,7 @@ label {
 }
 input[type="text"],
 textarea {
+  position: relative;
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -536,6 +535,9 @@ button {
   .recentOrders {
     overflow-x: auto;
   }
+  .recentOrders-c {
+    overflow-x: auto;
+  }
   .status.inProgress {
     white-space: nowrap;
   }
@@ -546,6 +548,10 @@ button {
     grid-template-columns: repeat(1, 1fr);
   }
   .cardHeader h2 {
+    font-size: 20px;
+  }
+
+  .cardHeader-c h2 {
     font-size: 20px;
   }
   .user {

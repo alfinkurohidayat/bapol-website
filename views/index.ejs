@@ -27,6 +27,7 @@
         </div>
     </div>
   </div>
+
   <!-- ================ Order Details List ================= -->
   <div class="details">
       <div class="recentOrders">
@@ -106,12 +107,12 @@
 
 
   <div class="details-c">
-    <div class="recentOrders-c">
+  <div class="recentOrders-c">
 <!-- atribute name pada tag input harus sama dengan property json -->
-<form method="post" action="/beranda">
+<form method="post" action="/">
     <div class="form-group">
       <label for="name">Nama:</label>
-      <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
@@ -119,27 +120,30 @@
     </div>
     <div class="form-group">
       <label for="comment">Komentar:</label>
-      <textarea id="comment" name="comment" maxlength="100" placeholder="Tulis komentar Anda di sini" rows="5" required></textarea>
+      <textarea id="comment" name="text" maxlength="100" placeholder="Tulis komentar Anda di sini" rows="5" required></textarea>
     </div>
     <div class="form-group">
         <button type="submit" onclick="window.location.href=''">Kirim</button>
       </div>
   </form>
-  <div class="cardHeader-c">
-    <h2>Comment</h2>
+
+    <div class="cardHeader-c">
+    <h2>Comment</h2><br><br>
     </div>
         <table>
             <tbody>
                 <% comment.forEach(com => { %>
                     <tr>
-                      <td>
-                          <div class="inline"><h2><%= com.nama %></h2> <p><%= com.email %></p> </div>
-                          <p><%= com.text %></p>
-                      </td>
+                        <td><h3><%= com.nama %></h3></td>
+                        <td><p><%= com.email %></p></td>
+                    </tr>
+                    <tr>
+                      <td><%= com.text %></td>
                     </tr>
                 <% }) %>
             </tbody>
         </table>
     </div>
-    </div>
+</div>
+
 </div>
