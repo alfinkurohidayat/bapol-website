@@ -5,17 +5,17 @@
         </div>
     </div>
     <!-- ======================= Cards ================== -->
+    <div class="cardBox-p">
     <% produk.forEach((pro) => { %>
-        <div class="cardBox-p">
             <div class="card" onclick="window.location.href='<%= pro.link %>'">
                 <div>
                     <div class="numbers"><%= pro.nama %></div>
+                    <div class="cardName"><%= pro.desk %></div>
                 </div>
-      
                 <div class="iconBx">
                         <img src="<%= pro.gambar  %>" alt="" width="150px" height="150px">
                 </div>
             </div>
-        </div>
     <% }) %>
+    </div>
   </div>

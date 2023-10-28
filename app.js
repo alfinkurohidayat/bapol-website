@@ -5,7 +5,10 @@ import cookieParser from 'cookie-parser'; //melakukan cookie pada flash message
 import flash from 'connect-flash'; //modul untuk melakukan flash connect
 import bodyParser from "body-parser";
 import  {loadData}  from './utils/olahdata.js';
-
+import { loadComment } from './utils/comment.js';
+import { findComment } from './utils/comment.js';
+import { cekComment } from './utils/comment.js';
+import { addComment } from './utils/comment.js';
 
 const app = express();
 const port = 3200;
@@ -39,7 +42,9 @@ app.use(flash());
 
 // halaman home
 app.get('/beranda', (req,res) => {
+    const comment = loadComment();
     res.render('index', {
+      comment,
       title : 'beranda',
       layout : 'layout/main-layout'
     })
@@ -72,7 +77,9 @@ app.get('/produk', (req,res) => {
 
 //menangani jika error
   app.use('/', (req,res) => {
+    const comment = loadComment();
     res.render('index', {
+      comment,
       title : 'Bapol',
       layout : 'layout/main-layout'
     })
