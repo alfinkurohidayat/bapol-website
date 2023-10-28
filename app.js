@@ -13,6 +13,7 @@ import { addComment } from './utils/comment.js';
 const app = express();
 const port = 3200;
 
+import {body, validationResult, check} from "express-validator"; 
 
 app.set('view engine','ejs')
  
@@ -55,19 +56,13 @@ app.get('/beranda', (req,res) => {
   app.post('/',(req,res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
-      //  jika ada duplikat munculkan halaman apa
       res.render('index', {
         title : 'comment',
         layout : 'layout/main-layout'
       })
     }else{
-      // membuat method baru di folder utils > comment.js
     addComment(req.body);
-  
-  
-      // ketika data berhasil masuk kita lakukan redirect()  agar kembali ke halaman kontak dengan data baru
     res.redirect('/beranda'); 
-    // yang akan menengani buka post tetapi get
     }
   })
 
@@ -86,14 +81,16 @@ app.get('/produk', (req,res) => {
 
 
   // halaman detail produk
-
-  const bp = [
-              {berat : "50 gram" , harga : "5.000"},
-             ];
-
   app.get('/produk/bp', (req, res) => {
+    const bp = [
+      {berat : "50 gram" , harga : "5.000"},
+      {berat : "250 gram" , harga : "20.000"},
+      {berat : "590 gram" , harga : "35.000"},
+      {berat : "1 kg" , harga : "70.000"}
+     ];
     // Render tampilan EJS (transaksi.ejs) dan kirimkan data produk
     res.render('bp', { 
+      bp,
       title : 'basreng pedas',
       layout : 'layout/main-layout'
     });
