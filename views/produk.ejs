@@ -5,56 +5,17 @@
         </div>
     </div>
     <!-- ======================= Cards ================== -->
-    <div class="cardBox-p">
-        <div class="card" onclick="window.location.href='/produk/bp'">
-            <div>
-                <div class="numbers">Basreng Pedas</div>
-            </div>
-  
-            <div class="iconBx">
-                    <img src="img/basreng.jpeg" alt="" width="150px" height="150px">
-            </div>
-        </div>
-  
-        <div class="card">
-            <div>
-                <div class="numbers">Cimol Pedas</div>
-            </div>
-  
-            <div class="iconBx">
-                <img src="img/cimol.jpeg" alt="" width="150px" height="150px">
+    <% produk.forEach((pro) => { %>
+        <div class="cardBox-p">
+            <div class="card" onclick="window.location.href='<%= pro.link %>'">
+                <div>
+                    <div class="numbers"><%= pro.nama %></div>
+                </div>
+      
+                <div class="iconBx">
+                        <img src="<%= pro.gambar  %>" alt="" width="150px" height="150px">
+                </div>
             </div>
         </div>
-
-        <div class="card">
-            <div>
-                <div class="numbers">Basreng Original</div>
-            </div>
-  
-            <div class="iconBx">
-                <img src="img/original.jpeg" alt="" width="150px" height="150px">
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="numbers">Macaroni Pedas</div>
-            </div>
-  
-            <div class="iconBx">
-                <img src="img/macaroni.jpeg" alt="" width="150px" height="150px">
-            </div>
-        </div>
-
-        <div class="card">
-            <div>
-                <div class="numbers">Mie Gulung Pedas</div>
-            </div>
-  
-            <div class="iconBx">
-                <img src="img/mie gulung.jpeg" alt="" width="150px" height="150px">
-            </div>
-        </div>
-    </div>
-  
+    <% }) %>
   </div>

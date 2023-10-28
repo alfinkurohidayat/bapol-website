@@ -1,0 +1,7 @@
+[
+    {"link" : "/produk/bp" , "nama" : "Basreng Pedas" , "gambar" : "/img/basreng.jpeg"},
+    {"link" : "#" , "nama" : "Basreng Original" , "gambar" : "/img/original.jpeg"},
+    {"link" : "#" , "nama" : "Cimol Pedas" , "gambar" : "/img/cimol.jpeg"},
+    {"link" : "#" , "nama" : "Macaroni Pedas" , "gambar" : "/img/macaroni.jpeg"},
+    {"link" : "#" , "nama" : "Mie Gulung Pedas" , "gambar" : "/img/mie gulung.jpeg"}
+]

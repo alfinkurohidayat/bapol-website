@@ -3,7 +3,8 @@ import expressLayouts from 'express-ejs-layouts'; // untuk layout yang lebih mud
 import session from 'express-session'; //melakukan session pada flash massage
 import cookieParser from 'cookie-parser'; //melakukan cookie pada flash message
 import flash from 'connect-flash'; //modul untuk melakukan flash connect
-
+import bodyParser from "body-parser";
+import  {loadData}  from './utils/olahdata.js';
 
 
 const app = express();
@@ -23,7 +24,7 @@ app.use(express.static('public'))
 // middleware untuk ngeparsing data tambah kontak
 app.use(express.urlencoded({extended : true})); 
 
-
+app.use(bodyParser.json());
 
 //konfigurasi flash
 app.use(cookieParser('secret'));
@@ -45,12 +46,12 @@ app.get('/beranda', (req,res) => {
   })
 
 
-  
-
 
   // halaman produk
 app.get('/produk', (req,res) => {
+  const produk = loadData();
   res.render('produk', {
+    produk,
     title : 'produk',
     layout : 'layout/main-layout'
   })
