@@ -127,6 +127,17 @@
       </div>
   </form>
 
+  <% if (typeof errors != 'undefined') { %>
+    <div class="cool-div">
+      <ul>
+        <% errors.forEach(err => { %>
+           <li><%= err.msg %></li>
+        <% }) %>
+      </ul>
+    </div>
+  
+  <% } %>
+
     <div class="cardHeader-c">
     <h2>Comment</h2><br><br>
     </div>

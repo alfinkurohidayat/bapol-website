@@ -53,18 +53,31 @@ app.get('/beranda', (req,res) => {
 
 
 
-  app.post('/',(req,res) => {
+  app.post('/', (req, res) => {
     const errors = validationResult(req);
-    if(!errors.isEmpty()){
+    if (!errors.isEmpty()) {
       res.render('index', {
-        title : 'comment',
-        layout : 'layout/main-layout'
-      })
-    }else{
-    addComment(req.body);
-    res.redirect('/beranda'); 
+        title: 'comment',
+        layout: 'layout/main-layout',
+        errors: errors.array(), // Kirim pesan kesalahan ke halaman
+        // ... (tambahkan field lain yang mungkin diperlukan)
+      });
+    } else {
+      try {
+        addComment(req.body);
+        res.redirect('/beranda');
+      } catch (error) {
+        console.error('Error while adding comment:', error);
+        res.render('index', {
+          title: 'comment',
+          layout: 'layout/main-layout',
+          errors: [{ msg: 'Error while adding comment. Please try again.' }] // Pesan kesalahan umum
+          // ... (tambahkan field lain yang mungkin diperlukan)
+        });
+      }
     }
-  })
+  });
+  
 
 
 

@@ -14,9 +14,14 @@ if(!fs.existsSync(datapath)) {
 
 // mengambil semua data
 export const loadComment = () => {
-    const filebuffer = fs.readFileSync('data/comment.json', 'utf-8');
-    const kontaks = JSON.parse(filebuffer);
-    return kontaks;
+    try {
+        const filebuffer = fs.readFileSync('data/comment.json', 'utf-8');
+        const kontaks = JSON.parse(filebuffer);
+        return kontaks;
+    } catch (error) {
+        console.error('Error while loading comments:', error);
+        return []; // Mengembalikan array kosong jika terjadi kesalahan
+    }
 }
 
 // cari kontak berdasarkan nama
