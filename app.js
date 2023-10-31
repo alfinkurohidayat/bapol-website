@@ -44,8 +44,10 @@ app.use(flash());
 // halaman home
 app.get('/beranda', (req,res) => {
     const comment = loadComment();
+    const commentA = addComment();
     res.render('index', {
       comment,
+      commentA,
       title : 'beranda',
       layout : 'layout/main-layout'
     })
