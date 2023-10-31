@@ -53,7 +53,7 @@ function tambahKomentar() {
         // Reset input setelah menambah komentar
         document.getElementById('nama').value = '';
         document.getElementById('email').value = '';
-        document.getElementById('komentar').value = '';
+        document.getElementById('text').value = '';
     } else {
         alert("Silakan isi nama, email, dan komentar.");
     }
