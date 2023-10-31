@@ -123,11 +123,20 @@
       <textarea id="text" name="text" maxlength="100" placeholder="Tulis komentar Anda di sini" rows="5" required></textarea>
     </div>
     <div class="form-group">
-        <button type="submit" onclick="window.location.href=''">Kirim</button>
+        <button type="submit" onclick="tambahKomentar()">Kirim</button>
       </div>
   </form>
 
-  <% if (typeof errors != 'undefined') { %>
+
+  <div id="komentar-list">
+    <div class="flex">
+      <h3 class="nam"></h3>
+      <p class="ime"></p>
+    </div>
+    <p class="kom"></p>
+  </div>
+
+  <!-- <% if (typeof errors != 'undefined') { %>
     <div class="cool-div">
       <ul>
         <% errors.forEach(err => { %>
@@ -136,8 +145,8 @@
       </ul>
     </div>
   
-  <% } %>
-
+  <% } %> -->
+<!-- 
     <div class="cardHeader-c">
     <h2>Comment</h2><br><br>
     </div>
@@ -153,7 +162,7 @@
                     </tr>
                 <% }) %>
             </tbody>
-        </table>
+        </table> -->
     </div>
 </div>
 
