@@ -1,7 +1,7 @@
 // Fungsi untuk membuka WhatsApp
 function openWhatsApp() {
   // Ganti nomor WA dan pesan sesuai dengan yang Anda inginkan
-  var phoneNumber = "6282175577847"; // Ganti dengan nomor WA yang ingin Anda tuju
+  var phoneNumber = "6282163784981"; // Ganti dengan nomor WA yang ingin Anda tuju
   var message = `Halo, saya ingin memesan `
   // URL WA dengan nomor dan pesan
   var waURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
