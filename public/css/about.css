@@ -1,0 +1,61 @@
+.details-a {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns:repeat(1fr, 1fr);
+    grid-gap: 30px;
+    /* margin-top: 10px; */
+  }
+  
+  .details-a .recentOrders-a {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+  }
+  
+  .details-a .cardHeader-a {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .cardHeader-a h2 {
+    font-weight: 600;
+    color: var(--blue);
+  }
+  
+  .details-a table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1px;
+  }
+  
+  .details-a .recentOrders-a table tr {
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .details-a .recentOrders-a table tr:last-child {
+    border-bottom: none;
+  }
+  /* .details-a .recentOrders-a table tbody tr:hover {
+    background: var(--blue);
+    color: var(--white);
+  } */
+  .details-a .recentOrders-a table tr td {
+    padding: 10px;
+  }
+  .details-a .recentOrders-a table tr td:last-child {
+    text-align: start;
+  }
+  .details-a .recentOrders-a table tr td:nth-child(2) {
+    text-align: end;
+  }
+  .details-a .recentOrders-a table tr td:nth-child(3) {
+    text-align: center;
+  
+  }

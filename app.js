@@ -170,6 +170,32 @@ app.get('/produk', (req,res) => {
   });
 
 
+  app.get('/about', (req,res) => {
+    res.render('about', {
+      title : 'halaman about',
+      layout : 'layout/main-layout'
+    })
+  })
+
+
+  app.get('/contact',(req,res) => {
+    const contact = [
+      {nama : "Alfin Hidayat", Whatsapp : "082163784981"},
+      {nama : "Irma Lorenca", Whatsapp : "082163784981"},
+      {nama : "Wulandari", Whatsapp : "082163784981"},
+      {nama : "Mufidatul Ma'rifah", Whatsapp : "082163784981"},
+    ]
+    res.render('contact', {
+      contact,
+      title : 'halaman contact',
+      layout : 'layout/main-layout'
+    })
+  })
+
+
+ 
+
+
 //menangani jika error
   app.use('/', (req,res) => {
     const comment = loadComment();

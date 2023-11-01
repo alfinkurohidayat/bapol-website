@@ -508,6 +508,34 @@ button {
   text-transform: capitalize;
 }
 
+/* ====================== Contact ========================== */
+
+    /* Style untuk footer */
+    footer {
+      color: var(--black1);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 2em;
+      cursor: pointer;
+  }
+
+  /* Style untuk logo */
+  .logo {
+      width: 50px; /* Sesuaikan ukuran logo */
+      height: auto;
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+  }
+
+  /* Style untuk informasi kontak */
+  .contact-info {
+      display: inline-block;
+      vertical-align: middle;
+  }
+
+
+
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {
   .navigation {
