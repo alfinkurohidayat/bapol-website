@@ -1,35 +1,5 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     document.querySelector('form').onsubmit = function(event) {
-//         event.preventDefault(); // Menghentikan pengiriman formulir default
-
-//         let nama = document.getElementById('nama').value;
-//         let email = document.getElementById('email').value;
-//         let text = document.getElementById('text').value;
-
-//         // Validasi email atau informasi lain jika diperlukan
-
-//         // Kirim data ke server (Anda mungkin memerlukan XMLHttpRequest atau fetch API)
-//         // Contoh penggunaan fetch:
-//         fetch('/', {
-//             method: 'POST',
-//             body: JSON.stringify({ nama: nama, email: email, text: text }),
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             }
-//         })
-//         .then(response => response.json())
-//         .then(data => {
-//             // Manipulasi data jika diperlukan setelah pengiriman formulir
-//             console.log(data);
-//         });
-//     };
-// });
-
-
-
-
- // Fungsi untuk menampilkan komentar yang tersimpan di localStorage saat halaman dimuat
- window.onload = function() {
+// Fungsi untuk menampilkan komentar yang tersimpan di sessionStorage saat halaman dimuat
+window.onload = function() {
     tampilkanKomentar();
 };
 
@@ -47,7 +17,7 @@ function tambahKomentar() {
         // Menambah komentar baru ke div komentar-list
         document.getElementById('komentar-list').innerHTML += komentarBaru;
     
-        // Menyimpan komentar ke localStorage
+        // Menyimpan komentar ke sessionStorage
         simpanKomentar(nama, email, waktu, komentar);
 
         // Reset input setelah menambah komentar
@@ -59,9 +29,9 @@ function tambahKomentar() {
     }
 }
 
-// Fungsi untuk menyimpan komentar ke localStorage
+// Fungsi untuk menyimpan komentar ke sessionStorage
 function simpanKomentar(nama, email, waktu, komentar) {
-    var komentarSebelumnya = localStorage.getItem('komentarData');
+    var komentarSebelumnya = sessionStorage.getItem('komentarData');
     var komentarBaru = "";
 
     if (komentarSebelumnya) {
@@ -70,14 +40,13 @@ function simpanKomentar(nama, email, waktu, komentar) {
         komentarBaru = "<div class='inline'>" + "<h3>" + nama + "</h3 " + "<br>" + email  + "</div>" +  "<p>" + komentar + "</p>" + "<br>";
     }
 
-    localStorage.setItem('komentarData', komentarBaru);
+    sessionStorage.setItem('komentarData', komentarBaru);
 }
 
-// Fungsi untuk menampilkan komentar dari localStorage
+// Fungsi untuk menampilkan komentar dari sessionStorage
 function tampilkanKomentar() {
-    var komentarSebelumnya = localStorage.getItem('komentarData');
+    var komentarSebelumnya = sessionStorage.getItem('komentarData');
     if (komentarSebelumnya) {
         document.getElementById('komentar-list').innerHTML = komentarSebelumnya;
     }
 }
-
