@@ -50,3 +50,6 @@ function tampilkanKomentar() {
         document.getElementById('komentar-list').innerHTML = komentarSebelumnya;
     }
 }
+
+
+
