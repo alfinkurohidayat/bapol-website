@@ -7,7 +7,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 :root {
@@ -133,7 +132,7 @@ body {
 /* ===================== Main ===================== */
 .main {
   position: absolute;
-  width: calc(100% - 500px); /*100 - 300*/
+  width: calc(100% - 500px);
   left: 300px;
   min-height: 200vh;
   background: var(--white);
