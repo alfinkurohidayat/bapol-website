@@ -7,7 +7,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 :root {
@@ -137,7 +136,8 @@ body {
   left: 300px;
   min-height: 200vh;
   background: var(--white);
-  transition: 0.5s;
+  transition: 0.5;
+  overflow-x: hidden;
 }
 .main.active {
   width: calc(100% - 80px);
