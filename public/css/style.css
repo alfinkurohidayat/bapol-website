@@ -608,6 +608,14 @@ button {
     right: 0;
     left: initial;
   }
+  .main {
+    position: absolute;
+    width: calc(100% - 100px);
+    left: 300px;
+    min-height: 200vh;
+    background: var(--white);
+    transition: 0.5s;
+  }
 }
 
 
