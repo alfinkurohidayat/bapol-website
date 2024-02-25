@@ -132,7 +132,7 @@ body {
 /* ===================== Main ===================== */
 .main {
   position: absolute;
-  width: calc(100% - 500px);
+  width: calc(100% - 300px);
   left: 300px;
   min-height: 200vh;
   background: var(--white);
