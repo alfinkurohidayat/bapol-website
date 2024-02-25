@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 :root {
@@ -607,14 +608,6 @@ button {
     position: fixed;
     right: 0;
     left: initial;
-  }
-  .main {
-    position: absolute;
-    width: calc(100% - 100px);
-    left: 300px;
-    min-height: 200vh;
-    background: var(--white);
-    transition: 0.5s;
   }
 }
 
