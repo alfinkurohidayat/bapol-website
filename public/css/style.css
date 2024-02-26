@@ -223,13 +223,13 @@ body {
 
 .cardBox-i .card {
   position: relative;
-  background: var(--white);
+  /* background: var(--white); */
   padding: 30px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); */
 }
 
 .cardBox-i .card .numbers {
@@ -255,9 +255,9 @@ body {
   width: 100%;
 }
 
-.cardBox-i .card:hover {
+/* .cardBox-i .card:hover {
   background: var(--blue);
-}
+} */
 .cardBox-i .card:hover .numbers,
 .cardBox-i .card:hover .cardName,
 .cardBox-i .card:hover .iconBx {
