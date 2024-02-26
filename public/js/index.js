@@ -22,7 +22,7 @@ toggle.onclick = function () {
 
 
  // Daftar gambar yang akan digunakan
- const images = ["img/donut.jpg", "img/dp.jpg"];
+ const images = ["img/donut.jpg", "img/dp.jpg", "img/dp1.jpg"];
  let currentIndex = 0; // Indeks gambar saat ini
 
  function changeImage() {
