@@ -272,9 +272,8 @@ body {
   position: relative;
   width: 100%;
   padding: 20px;
-  display: flex;
-  /* grid-template-columns: repeat(5, 1fr); */
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
   overflow-x: auto;
 }
@@ -285,23 +284,17 @@ body {
   padding: 30px;
   border-radius: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   cursor: pointer;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-}
-
-.cardBox-f .card .numbers {
-  position: relative;
-  font-weight: 500;
-  font-size: 2.5rem;
-  color: var(--blue);
 }
 
 
 .cardBox-f .card .teks {
   position: relative;
+  margin-left: 40%;
   font-weight: 500;
-  font-size: .5rem;
+  font-size: 1.2rem;
   color: var(--blue);
 }
 
@@ -317,8 +310,9 @@ body {
 }
 
 .cardBox-f .card .iconBx img {
-  border-radius: 0%;
-  width: 100%;
+  border-radius: 10%;
+  width: 120%;
+  height: 10vh;
 }
 
 /* .cardBox-f .card:hover {
@@ -653,6 +647,9 @@ button {
 @media (max-width: 480px) {
   .cardBox-i {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .cardBox-f {
+    grid-template-columns: repeat(2, 2fr);
   }
   .cardHeader h2 {
     font-size: 20px;
