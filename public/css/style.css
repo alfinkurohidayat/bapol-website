@@ -275,7 +275,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
-  overflow-x: auto;
 }
 
 .cardBox-f .card {
@@ -292,7 +291,6 @@ body {
 
 .cardBox-f .card .teks {
   position: relative;
-  margin-left: 40%;
   font-weight: 500;
   font-size: 1.2rem;
   color: var(--blue);
@@ -311,8 +309,8 @@ body {
 
 .cardBox-f .card .iconBx img {
   border-radius: 10%;
-  width: 120%;
-  height: 10vh;
+  width: 100%;
+  height: 8vh;
 }
 
 /* .cardBox-f .card:hover {
@@ -647,9 +645,6 @@ button {
 @media (max-width: 480px) {
   .cardBox-i {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .cardBox-f {
-    grid-template-columns: repeat(2, 2fr);
   }
   .cardHeader h2 {
     font-size: 20px;
