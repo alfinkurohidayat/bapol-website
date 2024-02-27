@@ -674,6 +674,11 @@ button {
     right: 0;
     left: initial;
   }
+  .cardBox-f .card .iconBx img {
+    border-radius: 10%;
+    width: 50%;
+    height: 8vh;
+  }
 }
 
 
