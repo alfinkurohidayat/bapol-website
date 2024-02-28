@@ -279,12 +279,11 @@ body {
 
 .cardBox-f .card {
   position: relative;
-  background: var(--white);
+  /* background: var(--white); */
   padding: 30px;
   border-radius: 20px;
   display: flex;
   justify-content: space-around;
-  cursor: pointer;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
 
@@ -309,8 +308,34 @@ body {
 
 .cardBox-f .card .iconBx img {
   border-radius: 10%;
-  width: 100%;
-  height: 8vh;
+  width: 90%;
+  height: 9vh;
+}
+
+.items-1{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.items-1 button{
+  background-color: #fff;
+  color: rgb(6, 207, 6);
+  cursor: pointer;
+  font-size: 1.2em;
+  border: 1px solid rgb(6, 207, 6);
+  padding: 3px;
+  font-weight: 800;
+  transition: .5s all ;
+}
+
+.items-1 button:hover{
+  background-color: rgb(6, 207, 6);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2em;
+  border: 1px solid #fff;
+  padding: 5px;
+  font-weight: 800;
 }
 
 /* .cardBox-f .card:hover {
