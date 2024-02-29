@@ -709,7 +709,7 @@ button {
   }
   .cardBox-f .card .iconBx img {
     border-radius: 10%;
-    width: 30%;
+    width: 30px;
     height: 2vh;
   }
 }
