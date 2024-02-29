@@ -309,6 +309,11 @@ body {
   color: var(--black2);
 }
 
+.cardBox-f .card .iconBx img {
+  border-radius: 10%;
+  width: 80px;
+  height: 9vh;
+}
 
 
 .items-1{
@@ -704,10 +709,9 @@ button {
   }
   .cardBox-f .card .iconBx img {
     border-radius: 10%;
-    width: 80px;
-    height: 9vh;
+    width: 30px;
+    height: 2vh;
   }
-  
 }
 
 
