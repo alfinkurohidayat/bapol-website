@@ -675,14 +675,19 @@ button {
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen  and (min-device-width: 320px) 
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2){
   .cardBox-i {
     grid-template-columns: repeat(1, 1fr);
   }
-  .cardBox-f {
+  .cardBox-f{
     grid-template-columns: repeat(2, 1fr);
   }
-  .cardHeader h2,
+  .cardHeader h2 {
+    font-size: 20px;
+  }
+
   .cardHeader-c h2 {
     font-size: 20px;
   }
@@ -695,20 +700,24 @@ button {
     z-index: 1000;
   }
   .navigation.active {
+    width: 100%;
     left: 0;
   }
   .toggle {
     z-index: 10001;
+  }
+  .main.active .toggle {
     color: #fff;
     position: fixed;
     right: 0;
-  }
-  .main.active .toggle {
     left: initial;
   }
   .cardBox-f .card .iconBx img {
     border-radius: 10%;
     width: 30px;
-    height: 30px; /* Ubah ke ukuran yang lebih pasti */
+    height: 2vh;
   }
 }
+
+
+
