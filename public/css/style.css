@@ -670,9 +670,12 @@ button {
   .status.inProgress {
     white-space: nowrap;
   }
+  .cardBox-f{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (min-width: 200px) and (max-width: 480px) {
+@media (max-width: 280px) {
   .cardBox-i {
     grid-template-columns: repeat(1, 1fr);
   }
