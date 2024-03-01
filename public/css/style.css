@@ -675,7 +675,7 @@ button {
   }
 }
 
-@media(min-width: 220px) 
+@media(min-width: 200px) 
 and (max-width: 480px){
   .cardBox-i {
     grid-template-columns: repeat(1, 1fr);
