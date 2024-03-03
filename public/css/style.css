@@ -383,7 +383,7 @@ body {
 }
 .cardHeader h2 {
   font-weight: 600;
-  color: var(--blue);
+  color: var(--black);
 }
 .cardHeader .btn {
   position: relative;
@@ -394,11 +394,13 @@ body {
   border-radius: 6px;
 }
 
+
 .details table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: -120px;
 }
+
 .details table thead td {
   font-weight: 600;
 }
@@ -409,10 +411,10 @@ body {
 .details .recentOrders table tr:last-child {
   border-bottom: none;
 }
-.details .recentOrders table tbody tr:hover {
+/* .details .recentOrders table tbody tr:hover {
   background: var(--blue);
   color: var(--white);
-}
+} */
 .details .recentOrders table tr td {
   padding: 10px;
 }
@@ -466,7 +468,9 @@ body {
   background: var(--white);
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  
 }
+
 .recentCustomers .imgBx {
   position: relative;
   width: 40px;
@@ -474,6 +478,7 @@ body {
   border-radius: 50px;
   overflow: hidden;
 }
+
 .recentCustomers .imgBx img {
   position: absolute;
   top: 0;
@@ -482,6 +487,7 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
 .recentCustomers table tr td {
   padding: 12px 10px;
 }
@@ -494,10 +500,10 @@ body {
   font-size: 14px;
   color: var(--black2);
 }
-.recentCustomers table tr:hover {
+/* .recentCustomers table tr:hover {
   background: var(--blue);
   color: var(--white);
-}
+} */
 .recentCustomers table tr:hover td h4 span {
   color: var(--white);
 }

@@ -33,3 +33,50 @@ toggle.onclick = function () {
 
  // Panggil fungsi changeImage setiap beberapa detik (misalnya setiap 5 detik)
  setInterval(changeImage, 5000); // Ganti gambar setiap 5 detik
+
+
+
+
+
+
+
+
+
+
+ // Function to get the current time in Indonesia (GMT+7)
+function getCurrentTimeInIndonesia() {
+  const now = new Date();
+  const utcOffset = 7; // UTC+7 for Indonesia (Western Indonesian Time)
+
+  const localTime = now.getTime();
+  const localOffset = now.getTimezoneOffset() * 60000; // Convert minutes to milliseconds
+
+  const utc = localTime + localOffset;
+  const offsetTime = utc + (3600000 * utcOffset); // Convert hours to milliseconds
+
+  return new Date(offsetTime);
+}
+
+// Target date for the discount (in milliseconds)
+const discountEndTime = new Date('2024-03-27T00:00:00').getTime();
+
+// Update the countdown every second
+const countdownTimer = setInterval(() => {
+  const now = getCurrentTimeInIndonesia().getTime();
+  const distance = discountEndTime - now;
+
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the countdown
+  document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+  // If the countdown is over, stop the countdown timer
+  if (distance < 0) {
+    clearInterval(countdownTimer);
+    document.getElementById('countdown').innerHTML = 'Discount has ended!';
+  }
+}, 1000);
