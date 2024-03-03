@@ -11,7 +11,7 @@ import { cekComment } from './utils/comment.js';
 import { addComment } from './utils/comment.js';
 
 const app = express();
-const port = 3200;
+const port = 3300;
 
 import {body, validationResult, check} from "express-validator"; 
 
