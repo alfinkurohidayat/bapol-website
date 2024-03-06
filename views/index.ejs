@@ -12,12 +12,12 @@
 
   <!-- ======================= Cards ================== -->
   <div class="cardBox-i">
-    <div class="card" onclick="window.location.href='#'">
+    <div class="card">
         <div class="iconBx">
                 <!-- <img class="slide_img" src="img/donut.jpg" alt=""> -->
                 <img src="img/donut.jpg" usemap="#image_map">
                 <map name="image_map">
-                <area alt="" title="" href="/produk/bp" coords="3990,977,4751,1158" shape="rect">
+                <area alt="" title="" href="/produk/bp" coords="3990,977,4751,1158" shape="rect" onclick="() => {alert('ok')}">
                 </map>
         </div>
     </div>
@@ -48,7 +48,7 @@
 
   <div class="card" onclick="window.location.href='/produk/bp'">
     <div class="iconBx">
-            <img class="slide_img" src="img/d3.jpg" alt="rusak">
+            <img class="slide_img" src="img/d3.jpg">
     </div>
 
     <div class="items-1">
@@ -106,18 +106,23 @@
       <!-- ================= New Customers ================ -->
       <div class="recentCustomers">
           <div class="cardHeader">
-              <h2>Owner</h2>
+              <h2>Produk</h2>
           </div>
           <table>
-              <tr>
+              <tr class="b-don">
                   <td width="60px">
-                      <!-- <div class="imgBx"><img src="img/owner.jpeg" alt=""></div> -->
-                      <div><ion-icon name="add-outline" style="color: black;" onclick="alert('ok')"></ion-icon></div>
+                      <div><ion-icon name="add-outline" style="color: black;"></ion-icon></div>
                   </td>
                   <td>
                       <h4>Donat</h4>
                   </td>
               </tr>
+              <td class="don-1">
+                <p>a</p>
+                <p>b</p>
+                <p>c</p>
+                <p>d</p>
+              </td>
 
               <tr>
                 <td width="60px">

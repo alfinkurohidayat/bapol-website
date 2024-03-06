@@ -21,18 +21,18 @@ toggle.onclick = function () {
 };
 
 
- // Daftar gambar yang akan digunakan
- const images = ["img/donut.jpg", "img/dp.jpg", "img/dp1.jpg"];
- let currentIndex = 0; // Indeks gambar saat ini
+//  // Daftar gambar yang akan digunakan
+//  const images = ["img/donut.jpg", "img/dp.jpg", "img/dp1.jpg"];
+//  let currentIndex = 0; // Indeks gambar saat ini
 
- function changeImage() {
-     // Ganti gambar dengan gambar berikutnya dalam daftar
-     currentIndex = (currentIndex + 1) % images.length;
-     document.querySelector(".slide_img").src = images[currentIndex];
- }
+//  function changeImage() {
+//      // Ganti gambar dengan gambar berikutnya dalam daftar
+//      currentIndex = (currentIndex + 1) % images.length;
+//      document.querySelector(".slide_img").src = images[currentIndex];
+//  }
 
- // Panggil fungsi changeImage setiap beberapa detik (misalnya setiap 5 detik)
- setInterval(changeImage, 5000); // Ganti gambar setiap 5 detik
+//  // Panggil fungsi changeImage setiap beberapa detik (misalnya setiap 5 detik)
+//  setInterval(changeImage, 5000); // Ganti gambar setiap 5 detik
 
 
 
@@ -80,3 +80,19 @@ const countdownTimer = setInterval(() => {
     document.getElementById('countdown').innerHTML = 'Discount has ended!';
   }
 }, 1000);
+
+
+
+// btn produk
+const hai = document.querySelector('.don-1');
+const dons = document.querySelector('.b-don');
+
+// Fungsi untuk menambah atau menghapus kelas -block
+function toggleBlockClass() {
+  hai.classList.toggle('-block');
+}
+
+// Menambahkan event listener untuk mengaktifkan fungsi saat diklik
+dons.addEventListener('click', toggleBlockClass);
+
+
