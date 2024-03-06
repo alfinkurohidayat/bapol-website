@@ -689,6 +689,11 @@ and (max-width: 480px){
   .cardBox-f{
     grid-template-columns: repeat(2, 1fr);
   }
+  .cardBox-f .card .iconBx img {
+    border-radius: 5%;
+    width: 50px;
+    height: 4vh;
+  }
   .cardHeader h2 {
     font-size: 20px;
   }
