@@ -53,11 +53,37 @@
     border-radius: 20%;
   }
 
+  .b-don h4{
+    display: block
+  }
 
-  .don-1{
+  .b-don h4.-none{
     display: none;
   }
 
-  .-block{
+  .don-1 {
+    display: none;
+    position: absolute;
+    background-color: red;
+    margin-bottom: -50px;
+    width: 15vh;
+}
+
+.don-1.-block {
     display: block;
-  }
+    width: 15vh;
+    background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content td {
+  padding: 10px;
+}
+
+.dropdown-content h4,
+.dropdown-content p {
+  margin: 0;
+}

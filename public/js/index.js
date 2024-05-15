@@ -58,7 +58,7 @@ function getCurrentTimeInIndonesia() {
 }
 
 // Target date for the discount (in milliseconds)
-const discountEndTime = new Date('2024-03-27T00:00:00').getTime();
+const discountEndTime = new Date('2024-05-24T00:00:00').getTime();
 
 // Update the countdown every second
 const countdownTimer = setInterval(() => {
@@ -72,7 +72,7 @@ const countdownTimer = setInterval(() => {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the countdown
-  document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  document.getElementById('countdown').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
   // If the countdown is over, stop the countdown timer
   if (distance < 0) {
@@ -83,16 +83,76 @@ const countdownTimer = setInterval(() => {
 
 
 
-// btn produk
-const hai = document.querySelector('.don-1');
-const dons = document.querySelector('.b-don');
+// document.getElementById("dropdown-toggle").addEventListener("click", function() {
+//   var content = this.nextElementSibling;
+//   if (content.style.display === "none") {
+//     content.style.display = "table-row";
+//   } else {
+//     content.style.display = "none";
+//   }
+// });
 
-// Fungsi untuk menambah atau menghapus kelas -block
-function toggleBlockClass() {
-  hai.classList.toggle('-block');
+
+
+
+  const d = new Date();
+  const hour = d.getHours();
+
+  let greeting = "";
+
+  if (hour >= 0 && hour < 12) {
+      greeting = "Good Morning";
+  } else if (hour >= 12 && hour < 15) {
+      greeting = "Good Afternoon";
+  } else if (hour >= 15 && hour < 18) {
+      greeting = "Good Afternoon";
+  } else {
+      greeting = "Good Evening";
+  }
+
+  document.querySelector(".say").textContent = greeting;
+
+
+// Fungsi untuk memicu dialog pemilihan file saat tombol di klik
+function changeImage() {
+  document.getElementById('uploadInput').click();
 }
 
-// Menambahkan event listener untuk mengaktifkan fungsi saat diklik
-dons.addEventListener('click', toggleBlockClass);
+// Fungsi untuk mengunggah gambar yang dipilih oleh pengguna
+function uploadImage(event) {
+  const file = event.target.files[0]; // Dapatkan file gambar dari event
+  const formData = new FormData(); // Buat objek FormData untuk menyimpan data gambar
+
+  formData.append('image', file); // Tambahkan file gambar ke FormData dengan kunci 'image'
+
+  // Kirim data gambar ke server menggunakan fetch API
+  fetch('/upload/image', {
+      method: 'POST', // Kirim metode POST ke endpoint '/upload/image'
+      body: formData // Kirim data FormData sebagai body permintaan
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Failed to upload image');
+      }
+      return response.json(); // Parse respons sebagai JSON
+  })
+  .then(data => {
+      // Jika upload berhasil, ubah sumber gambar di browser
+      document.getElementById('mainImage').src = data.imageUrl;
+  })
+  .catch(error => {
+      console.error('Error uploading image:', error);
+  });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const submenuToggle = document.querySelector('.submenu-toggle a');
+    submenuToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const submenu = submenuToggle.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    });
+});
 
 

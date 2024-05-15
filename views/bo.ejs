@@ -20,8 +20,8 @@
             <div class="dropdown">
               <button class="dropbtn">Buy Now</button>
               <div class="dropdown-content">
-                <a href="#" onclick="openWhatsApp()">WhatsApp</a>
-                <a href="#" onclick="openInstagram()">Instagram</a>
+                <a href="#" onclick="handlePurchase('WhatsApp', '<%= bo[0].berat %>', '<%= bo[0].harga %>')">WhatsApp</a>
+                <a href="#" onclick="handlePurchase('Instagram', '<%= bo[0].berat %>', '<%= bo[0].harga %>')">Instagram</a>                
               </div>
             </div>
           </div>

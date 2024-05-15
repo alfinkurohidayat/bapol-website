@@ -1,0 +1,89 @@
+<div class="main">
+    <div class="topbar">
+        <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+    </div>
+   
+    <!-- ================ Order Details List ================= -->
+    <div class="details-a">
+        <div class="recentOrders-a">
+            <div class="cardHeader-a">
+                <h2>About</h2>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                      <td>
+                        <p>Donat Putri terbuat dari bahan-bahan pilihan yang di proses dengan sangat baik sehingga menghasilkan produk dengan cita rasa terbaik💓</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Donat Putri juga hadir dalam banyak varian produk yang tentunya punya cita rasa yang khas dan tiada duanya😁</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Produk Donat Putri telah terjamin rasa dan kualitasnya menjadikan produk-produk Donat Putri sebagai cemilan yang cocok saat makan ataupun saat kumpul bersama keluarga❤️</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Terima kasih kepada para konsumen setia Donat Putri💓💓💓💓💓💓💓💓💓💓💓💓💓</p>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+  </div>
+
+
+
+  <div class="details-a">
+    <div class="recentOrders-a">
+        <table>
+            <tbody>
+                <tr>
+                  <td>
+                    <footer>
+                 
+                      <div class="contact-info">
+                          <p>Hubungi kami untuk informasi lebih lanjut:</p>
+                          <p onclick="window.location.href='https://www.google.com/maps/place/STMIK+Triguna+Dharma/@3.5414499,98.6577755,17z/data=!3m1!4b1!4m6!3m5!1s0x30313a7e757a80cf:0xd4e3a9dc3a116b97!8m2!3d3.5414445!4d98.6603504!16s%2Fg%2F1hm2c_zfb?entry=ttu'">Alamat: Jl. Pintu Air I Jl. Jenderal Besar A.H. Nasution No.73, Kwala Bekala, Kec. Medan Johor, Kota Medan, Sumatera Utara 20146</p>
+                          <p onclick="openWhatsApp()">Telepon: 0821-6378-4981</p>
+                      </div>
+                  </footer>
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<% include layout/main-layout %>
+
+<h1><%= title %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>Tanggal</th>
+      <th>Berat</th>
+      <th>Harga</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% penjualan.forEach(penjualan => { %>
+      <tr>
+        <td><%= penjualan.platform %></td>
+        <td><%= format(new Date(penjualan.tanggal), 'yyyy-MM-dd HH:mm:ss') %></td>
+        <td><%= penjualan.berat %></td>
+        <td><%= penjualan.harga %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+
+  </div>

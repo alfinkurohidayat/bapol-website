@@ -1,0 +1,46 @@
+<!-- login.ejs -->
+<div class="main">
+    <div class="topbar">
+        <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+    </div>
+   
+    <!-- ================ Order Details List ================= -->
+    <% if (isLoggedIn) { %>
+    <div class="logout">
+        <h3>You are logged in!</h3>
+        <a href="/logout">Logout</a>
+    </div>
+    <% } else { %>
+    <div class="login">
+        <div class="login-a">
+            <div class="log-a">
+            </div>
+                <div class="log-in">
+                    <div class="log-1">
+                        <img src="img/log.png" alt="">
+                    </div>
+                    <div class="log-2">
+                        <h2>Hello!</h2>
+                        <h2 class="say"></h2>
+                        <form id="loginForm" action="/login" method="post">
+                            <h3 style="padding-bottom: 60px;">Login Your Account</h3>
+                            <div class="l-1">
+                                <label style="position: absolute; margin-left: 6%;" for="username">Username</label>
+                                <input type="text" autocomplete="off" id="username" name="username" maxlength="20" required style="width: 70%; height: 40px; margin: 30px;">
+                            </div>
+                            <div class="l-2">
+                                <label style="position: absolute; margin-left: 6%;" for="password">Password</label>
+                                <input type="password" id="password" name="password" required style="width: 70%; height: 40px; margin: 30px;">
+                            </div>
+                            <div>
+                                <button type="submit" style="background-color: salmon;">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <% } %>
+</div>

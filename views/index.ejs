@@ -14,14 +14,22 @@
   <div class="cardBox-i">
     <div class="card">
         <div class="iconBx">
-                <!-- <img class="slide_img" src="img/donut.jpg" alt=""> -->
-                <img src="img/donut.jpg" usemap="#image_map">
-                <map name="image_map">
+            <a class="change" style="color: black; position: relative; width: 10px; font-size: 28px; cursor: pointer;" onclick="changeImage()">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+            </a>
+            <img id="mainImage" src="<%= mainImageSrc %>" usemap="#image_map">
+            <map name="image_map">
                 <area alt="" title="" href="/produk/bp" coords="3990,977,4751,1158" shape="rect" onclick="() => {alert('ok')}">
-                </map>
+            </map>
+            <input type="file" id="uploadInput" accept="image/*" onchange="uploadImage(event)" style="display: none;">
         </div>
     </div>
-  </div>
+</div>
+
+
+
+
+
 
   <div class="cardBox-f">
     <div class="card" onclick="window.location.href='/produk/bp'">
@@ -81,22 +89,22 @@
               <tbody>
                   <tr>
                     <td>
-                        <p>Bapol terbuat dari bahan-bahan pilihan yang di proses dengan sangat baik sehingga menghasilkan produk dengan cita rasa terbaik💓</p>
+                        <p>Donat Putri terbuat dari bahan-bahan pilihan yang di proses dengan sangat baik sehingga menghasilkan produk dengan cita rasa terbaik💓</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                        <p>Bapol juga hadir dalam banyak varian produk yang tentunya punya cita rasa yang khas dan tiada duanya😁</p>
+                        <p>Donat Putri juga hadir dalam banyak varian produk yang tentunya punya cita rasa yang khas dan tiada duanya😁</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                        <p>Produk Bapol telah terjamin rasa dan kualitasnya menjadikan produk-produk Bapol sebagai teman yang cocok saat makan ataupun saat kumpul bersama keluarga❤️</p>
+                        <p>Produk Donat Putri telah terjamin rasa dan kualitasnya menjadikan produk-produk Donat Putri sebagai cemilan yang cocok saat makan ataupun saat kumpul bersama keluarga❤️</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                        <p>Terima kasih kepada para konsumen setia Bapol💓💓💓💓💓💓💓💓💓💓💓💓💓</p>
+                        <p>Terima kasih kepada para konsumen setia Donat Putri💓💓💓💓💓💓💓💓💓💓💓💓💓</p>
                     </td>
                   </tr>
               </tbody>
@@ -109,113 +117,24 @@
               <h2>Produk</h2>
           </div>
           <table>
-              <tr class="b-don">
-                  <td width="60px">
-                      <div><ion-icon name="add-outline" style="color: black;"></ion-icon></div>
+            <tr class="b-don" id="dropdown-toggle">
+              <td width="100px" style="display: flex; justify-content: space-between;">
+                  <% np.forEach(nps => { %>
+                    <h4 class="prod"><%= nps.nama %></h4>
                   </td>
-                  <td>
-                      <h4>Donat</h4>
-                  </td>
-              </tr>
-              <td class="don-1">
-                <p>a</p>
-                <p>b</p>
-                <p>c</p>
-                <p>d</p>
-              </td>
-
-              <tr>
-                <td width="60px">
-                    <!-- <div class="imgBx"><img src="img/owner.jpeg" alt=""></div> -->
-                    <div><ion-icon name="add-outline" style="color: black;"></ion-icon></div>
-                </td>
-                <td>
-                    <h4>Roti Coklat</h4>
-                </td>
-            </tr>
-
-            <tr>
-              <td width="60px">
-                  <!-- <div class="imgBx"><img src="img/owner.jpeg" alt=""></div> -->
-                  <div><ion-icon name="add-outline" style="color: black;"></ion-icon></div>
-              </td>
-              <td>
-                  <h4>Pisang Coklat</h4>
-              </td>
-          </tr>
-
-          <tr>
-            <td width="60px">
-                <!-- <div class="imgBx"><img src="img/owner.jpeg" alt=""></div> -->
-                <div><ion-icon name="add-outline" style="color: black;"></ion-icon></div>
-            </td>
-            <td>
-                <h4>Brownies</h4>
-            </td>
-        </tr>
+                  </tr>
+                  
+                  <tr class="dropdown-content don-1">
+                    <td colspan="0">
+                      <p>donat kacang</p>
+                      <p>paha ayam</p>
+                      <p>donat meses</p>
+                    </td>
+                  </tr>
+                  <% }) %>
           </table>
       </div>
   </div>
-
-
-  <div class="details-c">
-  <div class="recentOrders-c">
-<!-- atribute name pada tag input harus sama dengan property json -->
-<form method="post" action="/">
-    <div class="form-group">
-      <label for="name">Nama:</label>
-      <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" placeholder="Masukkan email Anda" required>
-    </div>
-    <div class="form-group">
-      <label for="comment">Komentar:</label>
-      <textarea id="text" name="text" maxlength="100" placeholder="Tulis komentar Anda di sini" rows="5" required></textarea>
-    </div>
-    <div class="form-group">
-        <button type="submit" onclick="tambahKomentar()">Kirim</button>
-      </div>
-  </form>
-
-
-  <div id="komentar-list">
-    <div class="flex">
-      <h3 class="nam"></h3>
-      <p class="ime"></p>
-    </div>
-    <p class="kom"></p>
-  </div>
-
-  <!-- <% if (typeof errors != 'undefined') { %>
-    <div class="cool-div">
-      <ul>
-        <% errors.forEach(err => { %>
-           <li><%= err.msg %></li>
-        <% }) %>
-      </ul>
-    </div>
-  
-  <% } %> -->
-<!-- 
-    <div class="cardHeader-c">
-    <h2>Comment</h2><br><br>
-    </div>
-        <table>
-            <tbody>
-                <% comment.forEach((com) => { %>
-                    <tr>
-                        <td><h3><%= com.nama %></h3></td>
-                        <td><p><%= com.email %></p></td>
-                    </tr>
-                    <tr>
-                      <td><%= com.text %></td>
-                    </tr>
-                <% }) %>
-            </tbody>
-        </table> -->
-    </div>
-  </div>
+   
 
 </div>
